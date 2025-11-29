@@ -1,0 +1,114 @@
+{
+  "test_case_1": {
+    "description": "Well-Prepared with Strong Resume",
+    "evidence": {
+      "MockPerformance": "Excellent",
+      "Consistency": "HighlyConsistent",
+      "Rejections": "None",
+      "ResumeQuality": "High"
+    },
+    "inference": {
+      "SkillLevel": {
+        "High": 0.85,
+        "Medium": 0.13,
+        "Low": 0.02
+      },
+      "ConfidenceState": {
+        "Confident": 0.6649999999999999,
+        "Neutral": 0.2735,
+        "Anxious": 0.0494,
+        "Frustrated": 0.0121
+      },
+      "PlacementReadiness": {
+        "WellPrepared": 0.7646153200000001,
+        "ModeratelyPrepared": 0.17211859999999998,
+        "Underprepared": 0.046417929999999996,
+        "HighRisk": 0.016848150000000003
+      }
+    }
+  },
+  "test_case_2": {
+    "description": "Average Student with Pressure and Weak Resume",
+    "evidence": {
+      "MockPerformance": "Average",
+      "Consistency": "Irregular",
+      "Rejections": "3-5",
+      "ResumeQuality": "Low"
+    },
+    "inference": {
+      "SkillLevel": {
+        "High": 0.15,
+        "Medium": 0.5,
+        "Low": 0.35
+      },
+      "ConfidenceState": {
+        "Confident": 0.13749999999999998,
+        "Neutral": 0.255,
+        "Anxious": 0.3995,
+        "Frustrated": 0.20799999999999996
+      },
+      "PlacementReadiness": {
+        "WellPrepared": 0.07358700000000003,
+        "ModeratelyPrepared": 0.18578650000000002,
+        "Underprepared": 0.41570525,
+        "HighRisk": 0.32492125
+      }
+    }
+  },
+  "test_case_3": {
+    "description": "High-Risk Critical Case",
+    "evidence": {
+      "MockPerformance": "Poor",
+      "Consistency": "Rare",
+      "Rejections": "MoreThan5",
+      "ResumeQuality": "Low"
+    },
+    "inference": {
+      "SkillLevel": {
+        "High": 0.02,
+        "Medium": 0.18,
+        "Low": 0.8
+      },
+      "ConfidenceState": {
+        "Confident": 0.0414,
+        "Neutral": 0.09160000000000001,
+        "Anxious": 0.40900000000000003,
+        "Frustrated": 0.458
+      },
+      "PlacementReadiness": {
+        "WellPrepared": 0.014701640000000004,
+        "ModeratelyPrepared": 0.0682546,
+        "Underprepared": 0.3742181600000001,
+        "HighRisk": 0.5428256
+      }
+    }
+  },
+  "test_case_4": {
+    "description": "Good Skills but Poor Resume",
+    "evidence": {
+      "MockPerformance": "Good",
+      "Consistency": "Moderate",
+      "Rejections": "1-2",
+      "ResumeQuality": "Low"
+    },
+    "inference": {
+      "SkillLevel": {
+        "High": 0.55,
+        "Medium": 0.35,
+        "Low": 0.1
+      },
+      "ConfidenceState": {
+        "Confident": 0.39,
+        "Neutral": 0.36250000000000004,
+        "Anxious": 0.1985,
+        "Frustrated": 0.049
+      },
+      "PlacementReadiness": {
+        "WellPrepared": 0.25664824999999997,
+        "ModeratelyPrepared": 0.29657700000000004,
+        "Underprepared": 0.30944849999999996,
+        "HighRisk": 0.13732624999999998
+      }
+    }
+  }
+}

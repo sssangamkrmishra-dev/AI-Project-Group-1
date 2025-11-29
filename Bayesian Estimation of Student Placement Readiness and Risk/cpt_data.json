@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "updated": "2024",
+    "description": "Conditional Probability Tables for Student Placement Readiness Bayesian Network",
+    "total_nodes": 7,
+    "evidence_nodes": 4,
+    "hidden_nodes": 2,
+    "target_nodes": 1
+  },
+  
+  "node_definitions": {
+    "MockPerformance": {
+      "type": "evidence",
+      "states": ["Excellent", "Good", "Average", "Poor"],
+      "description": "Technical assessment and mock interview scores"
+    },
+    "Consistency": {
+      "type": "evidence",
+      "states": ["HighlyConsistent", "Moderate", "Irregular", "Rare"],
+      "description": "Regularity of preparation activities over time"
+    },
+    "Rejections": {
+      "type": "evidence",
+      "states": ["None", "1-2", "3-5", "MoreThan5"],
+      "description": "Number of recent company rejections"
+    },
+    "ResumeQuality": {
+      "type": "evidence",
+      "states": ["High", "Medium", "Low"],
+      "ats_ranges": {
+        "High": "71-100",
+        "Medium": "41-70",
+        "Low": "0-40"
+      },
+      "description": "Resume quality based on ATS (Applicant Tracking System) score"
+    },
+    "SkillLevel": {
+      "type": "hidden",
+      "states": ["High", "Medium", "Low"],
+      "description": "Inferred technical competency level"
+    },
+    "ConfidenceState": {
+      "type": "hidden",
+      "states": ["Confident", "Neutral", "Anxious", "Frustrated"],
+      "description": "Inferred psychological readiness state"
+    },
+    "PlacementReadiness": {
+      "type": "target",
+      "states": ["WellPrepared", "ModeratelyPrepared", "Underprepared", "HighRisk"],
+      "description": "Overall placement success probability"
+    }
+  },
+  
+  "prior_probabilities": {
+    "MockPerformance": {
+      "Excellent": 0.15,
+      "Good": 0.30,
+      "Average": 0.40,
+      "Poor": 0.15
+    },
+    "Consistency": {
+      "HighlyConsistent": 0.20,
+      "Moderate": 0.35,
+      "Irregular": 0.30,
+      "Rare": 0.15
+    },
+    "Rejections": {
+      "None": 0.25,
+      "1-2": 0.35,
+      "3-5": 0.25,
+      "MoreThan5": 0.15
+    },
+    "ResumeQuality": {
+      "High": 0.25,
+      "Medium": 0.50,
+      "Low": 0.25
+    }
+  },
+  
+  "conditional_probabilities": {
+    "SkillLevel": {
+      "parents": ["MockPerformance", "Consistency"],
+      "description": "P(SkillLevel | MockPerformance, Consistency)",
+      "cpt": {
+        "Excellent_HighlyConsistent": {"High": 0.85, "Medium": 0.13, "Low": 0.02},
+        "Excellent_Moderate": {"High": 0.75, "Medium": 0.20, "Low": 0.05},
+        "Excellent_Irregular": {"High": 0.55, "Medium": 0.35, "Low": 0.10},
+        "Excellent_Rare": {"High": 0.35, "Medium": 0.45, "Low": 0.20},
+        
+        "Good_HighlyConsistent": {"High": 0.70, "Medium": 0.25, "Low": 0.05},
+        "Good_Moderate": {"High": 0.55, "Medium": 0.35, "Low": 0.10},
+        "Good_Irregular": {"High": 0.35, "Medium": 0.45, "Low": 0.20},
+        "Good_Rare": {"High": 0.20, "Medium": 0.45, "Low": 0.35},
+        
+        "Average_HighlyConsistent": {"High": 0.45, "Medium": 0.45, "Low": 0.10},
+        "Average_Moderate": {"High": 0.30, "Medium": 0.50, "Low": 0.20},
+        "Average_Irregular": {"High": 0.15, "Medium": 0.50, "Low": 0.35},
+        "Average_Rare": {"High": 0.08, "Medium": 0.37, "Low": 0.55},
+        
+        "Poor_HighlyConsistent": {"High": 0.20, "Medium": 0.50, "Low": 0.30},
+        "Poor_Moderate": {"High": 0.10, "Medium": 0.40, "Low": 0.50},
+        "Poor_Irregular": {"High": 0.05, "Medium": 0.25, "Low": 0.70},
+        "Poor_Rare": {"High": 0.02, "Medium": 0.18, "Low": 0.80}
+      }
+    },
+    
+    "ConfidenceState": {
+      "parents": ["Rejections", "SkillLevel"],
+      "description": "P(ConfidenceState | Rejections, SkillLevel)",
+      "cpt": {
+        "None_High": {"Confident": 0.70, "Neutral": 0.25, "Anxious": 0.04, "Frustrated": 0.01},
+        "None_Medium": {"Confident": 0.50, "Neutral": 0.40, "Anxious": 0.08, "Frustrated": 0.02},
+        "None_Low": {"Confident": 0.25, "Neutral": 0.45, "Anxious": 0.25, "Frustrated": 0.05},
+        
+        "1-2_High": {"Confident": 0.50, "Neutral": 0.35, "Anxious": 0.12, "Frustrated": 0.03},
+        "1-2_Medium": {"Confident": 0.30, "Neutral": 0.40, "Anxious": 0.25, "Frustrated": 0.05},
+        "1-2_Low": {"Confident": 0.10, "Neutral": 0.30, "Anxious": 0.45, "Frustrated": 0.15},
+        
+        "3-5_High": {"Confident": 0.30, "Neutral": 0.35, "Anxious": 0.28, "Frustrated": 0.07},
+        "3-5_Medium": {"Confident": 0.15, "Neutral": 0.30, "Anxious": 0.40, "Frustrated": 0.15},
+        "3-5_Low": {"Confident": 0.05, "Neutral": 0.15, "Anxious": 0.45, "Frustrated": 0.35},
+        
+        "MoreThan5_High": {"Confident": 0.15, "Neutral": 0.25, "Anxious": 0.40, "Frustrated": 0.20},
+        "MoreThan5_Medium": {"Confident": 0.08, "Neutral": 0.17, "Anxious": 0.45, "Frustrated": 0.30},
+        "MoreThan5_Low": {"Confident": 0.03, "Neutral": 0.07, "Anxious": 0.40, "Frustrated": 0.50}
+      }
+    },
+    
+    "PlacementReadiness": {
+      "parents": ["SkillLevel", "ConfidenceState", "ResumeQuality"],
+      "description": "P(PlacementReadiness | SkillLevel, ConfidenceState, ResumeQuality)",
+      "cpt": {
+        "High_Confident_High": {"WellPrepared": 0.90, "ModeratelyPrepared": 0.08, "Underprepared": 0.01, "HighRisk": 0.01},
+        "High_Confident_Medium": {"WellPrepared": 0.75, "ModeratelyPrepared": 0.20, "Underprepared": 0.04, "HighRisk": 0.01},
+        "High_Confident_Low": {"WellPrepared": 0.55, "ModeratelyPrepared": 0.30, "Underprepared": 0.12, "HighRisk": 0.03},
+        
+        "High_Neutral_High": {"WellPrepared": 0.75, "ModeratelyPrepared": 0.20, "Underprepared": 0.04, "HighRisk": 0.01},
+        "High_Neutral_Medium": {"WellPrepared": 0.60, "ModeratelyPrepared": 0.30, "Underprepared": 0.08, "HighRisk": 0.02},
+        "High_Neutral_Low": {"WellPrepared": 0.40, "ModeratelyPrepared": 0.35, "Underprepared": 0.20, "HighRisk": 0.05},
+        
+        "High_Anxious_High": {"WellPrepared": 0.50, "ModeratelyPrepared": 0.35, "Underprepared": 0.12, "HighRisk": 0.03},
+        "High_Anxious_Medium": {"WellPrepared": 0.35, "ModeratelyPrepared": 0.40, "Underprepared": 0.20, "HighRisk": 0.05},
+        "High_Anxious_Low": {"WellPrepared": 0.20, "ModeratelyPrepared": 0.35, "Underprepared": 0.35, "HighRisk": 0.10},
+        
+        "High_Frustrated_High": {"WellPrepared": 0.35, "ModeratelyPrepared": 0.40, "Underprepared": 0.20, "HighRisk": 0.05},
+        "High_Frustrated_Medium": {"WellPrepared": 0.20, "ModeratelyPrepared": 0.35, "Underprepared": 0.35, "HighRisk": 0.10},
+        "High_Frustrated_Low": {"WellPrepared": 0.10, "ModeratelyPrepared": 0.25, "Underprepared": 0.45, "HighRisk": 0.20},
+        
+        "Medium_Confident_High": {"WellPrepared": 0.50, "ModeratelyPrepared": 0.40, "Underprepared": 0.08, "HighRisk": 0.02},
+        "Medium_Confident_Medium": {"WellPrepared": 0.30, "ModeratelyPrepared": 0.50, "Underprepared": 0.17, "HighRisk": 0.03},
+        "Medium_Confident_Low": {"WellPrepared": 0.15, "ModeratelyPrepared": 0.40, "Underprepared": 0.35, "HighRisk": 0.10},
+        
+        "Medium_Neutral_High": {"WellPrepared": 0.30, "ModeratelyPrepared": 0.50, "Underprepared": 0.17, "HighRisk": 0.03},
+        "Medium_Neutral_Medium": {"WellPrepared": 0.18, "ModeratelyPrepared": 0.52, "Underprepared": 0.25, "HighRisk": 0.05},
+        "Medium_Neutral_Low": {"WellPrepared": 0.08, "ModeratelyPrepared": 0.30, "Underprepared": 0.45, "HighRisk": 0.17},
+        
+        "Medium_Anxious_High": {"WellPrepared": 0.15, "ModeratelyPrepared": 0.40, "Underprepared": 0.35, "HighRisk": 0.10},
+        "Medium_Anxious_Medium": {"WellPrepared": 0.08, "ModeratelyPrepared": 0.35, "Underprepared": 0.42, "HighRisk": 0.15},
+        "Medium_Anxious_Low": {"WellPrepared": 0.03, "ModeratelyPrepared": 0.20, "Underprepared": 0.52, "HighRisk": 0.25},
+        
+        "Medium_Frustrated_High": {"WellPrepared": 0.08, "ModeratelyPrepared": 0.30, "Underprepared": 0.42, "HighRisk": 0.20},
+        "Medium_Frustrated_Medium": {"WellPrepared": 0.04, "ModeratelyPrepared": 0.20, "Underprepared": 0.46, "HighRisk": 0.30},
+        "Medium_Frustrated_Low": {"WellPrepared": 0.02, "ModeratelyPrepared": 0.10, "Underprepared": 0.43, "HighRisk": 0.45},
+        
+        "Low_Confident_High": {"WellPrepared": 0.12, "ModeratelyPrepared": 0.35, "Underprepared": 0.40, "HighRisk": 0.13},
+        "Low_Confident_Medium": {"WellPrepared": 0.06, "ModeratelyPrepared": 0.25, "Underprepared": 0.49, "HighRisk": 0.20},
+        "Low_Confident_Low": {"WellPrepared": 0.02, "ModeratelyPrepared": 0.13, "Underprepared": 0.50, "HighRisk": 0.35},
+        
+        "Low_Neutral_High": {"WellPrepared": 0.06, "ModeratelyPrepared": 0.25, "Underprepared": 0.48, "HighRisk": 0.21},
+        "Low_Neutral_Medium": {"WellPrepared": 0.03, "ModeratelyPrepared": 0.17, "Underprepared": 0.50, "HighRisk": 0.30},
+        "Low_Neutral_Low": {"WellPrepared": 0.01, "ModeratelyPrepared": 0.09, "Underprepared": 0.45, "HighRisk": 0.45},
+        
+        "Low_Anxious_High": {"WellPrepared": 0.03, "ModeratelyPrepared": 0.15, "Underprepared": 0.47, "HighRisk": 0.35},
+        "Low_Anxious_Medium": {"WellPrepared": 0.01, "ModeratelyPrepared": 0.09, "Underprepared": 0.45, "HighRisk": 0.45},
+        "Low_Anxious_Low": {"WellPrepared": 0.01, "ModeratelyPrepared": 0.04, "Underprepared": 0.40, "HighRisk": 0.55},
+        
+        "Low_Frustrated_High": {"WellPrepared": 0.02, "ModeratelyPrepared": 0.10, "Underprepared": 0.38, "HighRisk": 0.50},
+        "Low_Frustrated_Medium": {"WellPrepared": 0.01, "ModeratelyPrepared": 0.05, "Underprepared": 0.34, "HighRisk": 0.60},
+        "Low_Frustrated_Low": {"WellPrepared": 0.00, "ModeratelyPrepared": 0.02, "Underprepared": 0.28, "HighRisk": 0.70}
+      }
+    }
+  },
+  
+  "justifications": {
+    "SkillLevel_cpt": "Combines mock performance with preparation consistency. Excellent mock + high consistency = 85% high skill. Irregular preparation reduces confidence in skill retention.",
+    "ConfidenceState_cpt": "Models psychological impact of rejections conditioned on skill level. High-skilled students recover faster from rejections. Low-skilled students with many rejections show high frustration.",
+    "PlacementReadiness_cpt": "Three-way conditioning on skill, confidence, and resume quality. All three factors must align for high readiness. Poor resume significantly reduces readiness even with good skills."
+  }
+}

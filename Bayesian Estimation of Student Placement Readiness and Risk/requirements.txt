@@ -1,0 +1,25 @@
+# Student Placement Readiness Bayesian Network
+# Requirements File
+# Python 3.8+
+
+# Core numerical computing
+numpy>=1.21.0
+
+# Visualization
+matplotlib>=3.5.0
+
+# Network diagrams
+networkx>=2.6.0
+
+# Optional: Advanced Bayesian Network features
+# Uncomment below if you want to use pgmpy for extended functionality
+pgmpy>=0.1.19
+
+# Optional: Jupyter notebook support
+# Uncomment below for interactive notebooks
+# jupyter>=1.0.0
+# ipython>=7.0.0
+
+# Development tools (optional)
+# pytest>=7.0.0  # For unit testing
+# black>=22.0.0  # For code formatting
