@@ -1,8 +1,7 @@
 # 🎯 Placement Planner
 
-> A powerful planner backend (GraphPlan + POP with temporal scheduling & repair) paired with a polished React frontend (Tailwind + Framer Motion) that visualizes plans, schedules, intermediate algorithm traces, and supports simulation & repair flows.
+> A  planner backend (GraphPlan + POP with temporal scheduling & repair) paired with a polished React frontend (Tailwind + Framer Motion) that visualizes plans, schedules, intermediate algorithm traces, and supports simulation & repair flows.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.8+-green.svg)
 ![React](https://img.shields.io/badge/react-18+-61DAFB.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688.svg)
@@ -24,8 +23,7 @@
   - [Frontend Setup](#frontend-react)
 - [Features Implemented](#-features-implemented)
 - [Future Work](#-future-work)
-- [Contributing](#-contributing)
-- [License](#-license)
+
 
 ---
 
@@ -160,13 +158,13 @@ Each action in the plan/schedule contains:
 
 - Python 3.8+
 - Node.js 16+
-- npm or yarn
+- npm 
 
 ### Backend (Python / FastAPI)
 
 ```bash
 # Navigate to project root
-cd "Planning Placement Strategy using GraphPlan and POP"
+cd Planning Placement Strategy using GraphPlan and POP
 
 # Create and activate virtual environment (recommended)
 python3 -m venv .venv
@@ -184,7 +182,7 @@ uvicorn app:app --reload
 ### Frontend (React)
 
 ```bash
-# Navigate to client directory
+# Navigate to client directory from Planning Placement Strategy using GraphPlan and POP (directory)
 cd client
 
 # Install dependencies
@@ -197,6 +195,23 @@ npm run dev
 > The frontend will be available at `http://localhost:5173`
 
 ---
+
+## Images :
+
+<img width="1193" height="952" alt="image" src="https://github.com/user-attachments/assets/90e3392e-6df6-4460-b9b7-a4702f652e64" />
+<img width="1193" height="952" alt="image" src="https://github.com/user-attachments/assets/24cf9e68-7906-4a15-ad64-f9efc76e15af" />
+<img width="802" height="923" alt="image" src="https://github.com/user-attachments/assets/8fb3d1ad-d538-4826-84a4-54dd506f12f8" />
+<img width="787" height="796" alt="image" src="https://github.com/user-attachments/assets/40886f07-2683-4e94-9e4f-ceb7972d3ac6" />
+<img width="782" height="622" alt="image" src="https://github.com/user-attachments/assets/0f9b2011-1d63-488f-82b9-cec9ffe3b437" />
+<img width="947" height="511" alt="image" src="https://github.com/user-attachments/assets/423626b8-1f0b-42d7-a861-00a1dbf03ed1" />
+<img width="965" height="547" alt="image" src="https://github.com/user-attachments/assets/ed197f2c-1bcd-41d8-9faf-40d56f6770d8" />
+
+
+
+
+
+
+
 
 ## ✅ Features Implemented
 
@@ -218,7 +233,7 @@ npm run dev
 - [x] Simulation endpoint + UI modal for single action state changes
 - [x] Data-driven heuristics via `estimates.json`
 
-### 🎓 Extra Features (Beyond Minimal Planner)
+### 🎓 Extra Features 
 
 - [x] Temporal scheduling + resource constraints
 - [x] Repair flow supporting executed actions
@@ -243,28 +258,9 @@ npm run dev
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-<div align="center">
-
-**Built with ❤️ for placement preparation**
-
-[Report Bug](../../issues) · [Request Feature](../../issues)
-
-</div>
