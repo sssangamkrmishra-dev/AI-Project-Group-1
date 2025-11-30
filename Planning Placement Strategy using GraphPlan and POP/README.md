@@ -208,6 +208,187 @@ npm run dev
 
 
 
+## 🧪 Running the Interactive Planner via Terminal
+
+This section explains how to run the backend planner directly from your terminal without using the frontend UI.
+
+---
+
+### Step 1 — Run the Script
+
+```bash
+python3 run_planner_example.py
+```
+
+> **Note:** If `estimates.json` exists, the script automatically loads probability-based heuristics.
+
+---
+
+### Step 2 — Provide Inputs
+
+When you run the script, you'll see the following prompts:
+
+```text
+Planner example (interactive).
+Press Enter to use defaults or provide comma-separated values.
+
+Initial state [DSA_LOW, ML_LOW, RESUME_LOW, NOT_BURNOUT]:
+Goals [DSA_HIGH, RESUME_HIGH, CONF_HIGH]:
+```
+
+#### ✅ Option A: Enter Custom Values
+
+You can provide your own comma-separated values:
+
+```text
+Initial state [DSA_LOW, ML_LOW, RESUME_LOW, NOT_BURNOUT]: 
+DSA_LOW, ML_HIGH, RESUME_LOW, BURN_OUT
+
+Goals [DSA_HIGH, RESUME_HIGH, CONF_HIGH]:
+DSA_HIGH, RESUME_HIGH, CONF_HIGH
+```
+
+#### ✅ Option B: Use Defaults
+
+Simply press `Enter` to use the default values:
+
+| Field | Default Value |
+|-------|---------------|
+| Initial State | `DSA_LOW, ML_LOW, RESUME_LOW, NOT_BURNOUT` |
+| Goals | `DSA_HIGH, RESUME_HIGH, CONF_HIGH` |
+
+---
+
+### 🎯 Example Input (Copy & Paste Ready)
+
+**Initial State:**
+
+```text
+DSA_LOW, ML_HIGH, RESUME_LOW, BURN_OUT
+```
+
+**Goal State:**
+
+```text
+DSA_HIGH, RESUME_HIGH, CONF_HIGH
+```
+
+---
+
+## 📤 Script Output Explained
+
+After running, the script outputs the following sections:
+
+---
+
+### 1️⃣ GraphPlan Construction Levels
+
+Shows how GraphPlan expands the planning graph layer by layer:
+
+```text
+Graph construction levels:
+Level 0: ['BURN_OUT', 'DSA_LOW', 'ML_HIGH', 'RESUME_LOW']
+Level 1: [...]
+Level 2: [...]
+...
+```
+
+> This helps visualize the state-space exploration during planning.
+
+---
+
+### 2️⃣ GraphPlan Final Plan (Ordered Sequence)
+
+The extracted linear action sequence:
+
+```text
+1. DSA_Practice_light
+2. Resume_Optimize_quick
+3. Resume_Optimize_deep
+4. DSA_Review
+5. DSA_Keep_practice
+6. MockInterview_full
+```
+
+---
+
+### 3️⃣ GraphPlan Step-by-Step State Evolution
+
+Shows how the world state changes after each action:
+
+```text
+Step 1: Apply DSA_Practice_light
+  before: ['BURN_OUT', 'DSA_LOW', ...]
+  after : ['DSA_MED', 'NOT_BURNOUT', ...]
+```
+
+> 💡 **Tip:** This is perfect for understanding how planning works at the conceptual level.
+
+---
+
+### 4️⃣ POP Scheduled Plan
+
+The Partial-Order Planner output includes:
+
+| Attribute | Description |
+|-----------|-------------|
+| Start week | When the action begins |
+| Duration | How long the action takes |
+| Effort | Estimated hours required |
+| Expected benefit | Probability-based benefit score |
+| Burnout risk | Risk level indicator |
+| Adds/Deletes | State changes (effects) |
+
+**Example Output:**
+
+```text
+- Resume_Optimize_quick: week 0
+- DSA_Practice_intense: week 0
+- Resume_Optimize_deep: week 1
+- MockInterview_full: week 2
+```
+
+---
+
+### 5️⃣ POP Step-by-Step World State Progression
+
+Shows how the plan unfolds over time with state transitions:
+
+```text
+Week 0: Action Resume_Optimize_quick
+  before: [...]
+  after : [...]
+
+Week 0: Action DSA_Practice_intense
+  before: [...]
+  after : [...]
+
+Week 2: Action MockInterview_full
+  before: [...]
+  after : [...]
+```
+
+> This visualization helps track how your preparation state evolves week by week.
+
+---
+
+### 📋 Quick Reference
+
+| Output Section | What It Shows |
+|----------------|---------------|
+| Construction Levels | GraphPlan layer-by-layer expansion |
+| Final Plan | Ordered action sequence |
+| State Evolution | Before/after states per action |
+| POP Schedule | Time-based action scheduling |
+| World Progression | Weekly state changes |
+
+
+
+### Images :
+<img width="1239" height="219" alt="image" src="https://github.com/user-attachments/assets/5a941909-b633-4f24-a10a-f54febbdb4b0" />
+<img width="1797" height="761" alt="image" src="https://github.com/user-attachments/assets/197a7b90-4ea0-48d8-9c78-4c1abcd1513c" />
+<img width="1781" height="223" alt="image" src="https://github.com/user-attachments/assets/61631860-8792-4f03-99b5-a51f1f968118" />
+<img width="1093" height="757" alt="image" src="https://github.com/user-attachments/assets/d84e9dbe-5c49-421d-a486-ed17f9de315b" />
 
 
 
