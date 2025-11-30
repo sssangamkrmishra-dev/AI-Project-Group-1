@@ -217,7 +217,7 @@ This section explains how to run the backend planner directly from your terminal
 ### Step 1 — Run the Script
 
 ```bash
-python3 run_planner_example.py
+python3 run_example.py
 ```
 
 > **Note:** If `estimates.json` exists, the script automatically loads probability-based heuristics.
