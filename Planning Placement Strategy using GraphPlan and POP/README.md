@@ -63,6 +63,46 @@ Only **two operational data sources** are used by the planning algorithm:
 | `max_parallel_major_actions_per_week` | `int` | Resource constraint | How many large-time commitments a student can handle concurrently |
 | `executed_actions` *(repair endpoint)* | `List[{name, status}]` | Actions that have been executed | Runtime observations used to replan |
 
+
+## 🧩 Student State Space (All Possible States)
+
+The planner represents the student using a finite set of Boolean fluents called **states**.  
+These states are used as *preconditions*, *effects*, *initial conditions*, and *goals* within GraphPlan and POP.
+
+### 🔢 Skill States
+- `DSA_LOW`  
+- `DSA_MED`  
+- `DSA_HIGH`
+- `ML_LOW`  
+- `ML_MED`  
+- `ML_HIGH`
+
+### 📄 Resume States
+- `RESUME_LOW`  
+- `RESUME_MED`  
+- `RESUME_HIGH`
+
+### 😌 Burnout / Well-being States
+- `NOT_BURNOUT`
+- `BURN_OUT`
+- `BURNOUT`
+
+### 🎤 Confidence / Communication States
+- `CONF_MED`
+- `CONF_HIGH`
+
+### 🧭 Additional Knowledge States
+- `RESEARCH_DONE`
+
+### 📌 Purpose
+These states describe the user at any time.  
+They dictate:
+- what actions can be executed (preconditions),  
+- what changes each action causes (effects),  
+- and what the planner tries to achieve (goals).
+
+
+
 #### Example `init_state`:
 
 ```text
