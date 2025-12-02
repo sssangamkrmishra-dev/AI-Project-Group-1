@@ -1,0 +1,98 @@
+{
+  "student_state": {
+    "DSA": 0.6,
+    "SystemDesign": 0.3,
+    "Resume": 0.4,
+    "HR": 0.5
+  },
+  "student_burnout": 0.2,
+  "start_readiness": 0.3948,
+  "ucs": {
+    "path": [
+      "Quick Revision",
+      "Quick Revision",
+      "Quick Revision",
+      "Quick Revision",
+      "Quick Revision",
+      "Take a Break",
+      "Take a Break",
+      "Take a Break",
+      "Quick Revision"
+    ],
+    "cost": 177.0,
+    "final_state": {
+      "DSA": 0.9000000000000002,
+      "SystemDesign": 0.6,
+      "Resume": 0.7000000000000002,
+      "HR": 0.8000000000000003
+    },
+    "burnout": 0.01,
+    "expansions": 718
+  },
+  "astar": {
+    "path": [
+      "Quick Revision",
+      "Quick Revision",
+      "Take a Break",
+      "Quick Revision",
+      "Take a Break",
+      "Take a Break",
+      "Quick Revision",
+      "Quick Revision",
+      "Quick Revision"
+    ],
+    "cost": 177.0,
+    "final_state": {
+      "DSA": 0.9000000000000002,
+      "SystemDesign": 0.6,
+      "Resume": 0.7000000000000002,
+      "HR": 0.8000000000000003
+    },
+    "burnout": 0.03,
+    "expansions": 87
+  },
+  "single_action_scores": [
+    {
+      "action": "Solve DSA Problem",
+      "gain": 0.02920000000000006,
+      "time": 60,
+      "util_per_min": 0.00048666666666666764,
+      "burnout_delta": 0.05
+    },
+    {
+      "action": "Revise Resume",
+      "gain": 0.03367999999999999,
+      "time": 30,
+      "util_per_min": 0.0011226666666666663,
+      "burnout_delta": 0.02
+    },
+    {
+      "action": "Practice System Design",
+      "gain": 0.019152000000000058,
+      "time": 90,
+      "util_per_min": 0.00021280000000000065,
+      "burnout_delta": 0.07
+    },
+    {
+      "action": "Give Mock HR Interview",
+      "gain": 0.01319999999999999,
+      "time": 45,
+      "util_per_min": 0.0002933333333333331,
+      "burnout_delta": 0.03
+    },
+    {
+      "action": "Quick Revision",
+      "gain": 0.037839999999999985,
+      "time": 20,
+      "util_per_min": 0.0018919999999999992,
+      "burnout_delta": 0.01
+    },
+    {
+      "action": "Take a Break",
+      "gain": 0.03759999999999997,
+      "time": 15,
+      "util_per_min": 0.0025066666666666644,
+      "burnout_delta": -0.1
+    }
+  ]
+}

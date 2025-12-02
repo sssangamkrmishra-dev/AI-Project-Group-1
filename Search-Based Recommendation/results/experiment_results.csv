@@ -1,0 +1,5 @@
+profile,start_readiness,bfs_first,bfs_cost,ucs_first,ucs_cost,astar_first,astar_cost
+balanced_mid,0.3948,Solve DSA Problem,9,Quick Revision,177.0,Quick Revision,177.0
+dsastrong,0.4312,Revise Resume,8,Quick Revision,174.0,Quick Revision,174.0
+resume_weak,0.3772,,,Quick Revision,184.0,Quick Revision,184.0
+burned_out,0.2808,,,Take a Break,200.0,Take a Break,200.0

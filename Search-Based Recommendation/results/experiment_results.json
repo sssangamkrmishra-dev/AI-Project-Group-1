@@ -1,0 +1,42 @@
+[
+  {
+    "profile": "balanced_mid",
+    "start_readiness": 0.3948,
+    "bfs_first": "Solve DSA Problem",
+    "bfs_cost": 9,
+    "ucs_first": "Quick Revision",
+    "ucs_cost": 177.0,
+    "astar_first": "Quick Revision",
+    "astar_cost": 177.0
+  },
+  {
+    "profile": "dsastrong",
+    "start_readiness": 0.4312,
+    "bfs_first": "Revise Resume",
+    "bfs_cost": 8,
+    "ucs_first": "Quick Revision",
+    "ucs_cost": 174.0,
+    "astar_first": "Quick Revision",
+    "astar_cost": 174.0
+  },
+  {
+    "profile": "resume_weak",
+    "start_readiness": 0.3772,
+    "bfs_first": null,
+    "bfs_cost": null,
+    "ucs_first": "Quick Revision",
+    "ucs_cost": 184.0,
+    "astar_first": "Quick Revision",
+    "astar_cost": 184.0
+  },
+  {
+    "profile": "burned_out",
+    "start_readiness": 0.2808,
+    "bfs_first": null,
+    "bfs_cost": null,
+    "ucs_first": "Take a Break",
+    "ucs_cost": 200.0,
+    "astar_first": "Take a Break",
+    "astar_cost": 200.0
+  }
+]
