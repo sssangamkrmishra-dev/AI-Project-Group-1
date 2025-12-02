@@ -600,7 +600,7 @@ By default, the app runs at:
 
 ### 7.1 Home Screen
 
-![UI Home](img/ui_home.png.png)
+![UI Home](img/ui_home.png)
 
 ### 7.2 Results Screen
 
