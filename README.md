@@ -1,6 +1,6 @@
 Group Number: 1
 
-Contributors:
+Contributors: <br>
 Rustam Kumar            (22CS01047) <br>
 Devanshu Dangi          (22CS01048) <br>
 Sarsava Het Pravinbhai  (22CS01061) <br>
