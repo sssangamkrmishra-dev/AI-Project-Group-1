@@ -2,9 +2,6 @@
 Student Placement Readiness Bayesian Network
 ============================================================================
 
-This module implements a Bayesian Network for estimating student placement
-readiness using Variable Elimination inference algorithm.
-
 Updated Network Structure (7 Nodes):
     [Mock Performance]  [Consistency]  [Rejections]  [Resume Quality]
             ↓                  ↓             ↓                ↓
@@ -362,7 +359,7 @@ def main():
     
     # Initialize Bayesian Network (loads CPTs from JSON)
     print("\n" + "="*70)
-    print("BAYESIAN NETWORK FOR STUDENT PLACEMENT READINESS (v2.0)")
+    print("BAYESIAN NETWORK FOR STUDENT PLACEMENT READINESS")
     print("="*70)
     print()
     
@@ -455,7 +452,6 @@ def main():
     print("\n\n" + "="*70)
     print("Results exported to 'bayesian_network_results.json'")
     print("="*70)
-    print("\nTo visualize results, run: python visualization.py")
     print()
 
 
