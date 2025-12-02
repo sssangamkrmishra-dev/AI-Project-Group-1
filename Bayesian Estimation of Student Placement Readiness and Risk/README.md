@@ -1,4 +1,4 @@
-**Author:** Sangam Kumar Mishra (Roll: 22CS01071)
+**Author:** Sangam Kumar Mishra (Roll: 22CS01071) <br> Debargha Nath  <br>
 
 # Bayesian Estimation of Student Placement Readiness and Risk
 
