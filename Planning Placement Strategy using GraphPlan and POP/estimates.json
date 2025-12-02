@@ -1,0 +1,60 @@
+{
+  "DSA_Practice_light": {
+    "duration": 2.1614794520547944,
+    "effort_hours": 21.614794520547946,
+    "probs": {
+      "DSA_MED": 0.6,
+      "NOT_BURNOUT": 0.95
+    }
+  },
+  "DSA_Practice_intense": {
+    "duration": 1.0,
+    "effort_hours": 25.0,
+    "probs": {
+      "DSA_HIGH": 0.85,
+      "BURNOUT": 0.3
+    }
+  },
+  "DSA_Keep_practice": {
+    "duration": 1.0,
+    "effort_hours": 12.0,
+    "probs": {
+      "DSA_HIGH": 0.7
+    }
+  },
+  "DSA_Review": {
+    "duration": 1.0,
+    "effort_hours": 6.0,
+    "probs": {
+      "DSA_MED": 0.5
+    }
+  },
+  "MockInterview_easy": {
+    "duration": 1.0,
+    "effort_hours": 3.0,
+    "probs": {
+      "CONF_MED": 0.8999999999999999
+    }
+  },
+  "MockInterview_full": {
+    "duration": 1.0,
+    "effort_hours": 5.0,
+    "probs": {
+      "CONF_HIGH": 0.95
+    }
+  },
+  "Resume_Optimize_quick": {
+    "duration": 1.0,
+    "effort_hours": 8.0,
+    "probs": {
+      "RESUME_MED": 0.7
+    }
+  },
+  "Resume_Optimize_deep": {
+    "duration": 1.0,
+    "effort_hours": 20.0,
+    "probs": {
+      "RESUME_HIGH": 0.9
+    }
+  }
+}
