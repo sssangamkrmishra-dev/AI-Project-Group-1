@@ -267,5 +267,6 @@ Everything is reproducible, validated, and ready for academic submission.
 ---
 
 # 👨‍💻 Authors
-**Devanshu Dangi **
+**Devanshu Dangi**
+**Utkarsh Singh**
 """
