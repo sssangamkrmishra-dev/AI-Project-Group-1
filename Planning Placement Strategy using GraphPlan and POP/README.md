@@ -8,6 +8,8 @@
 
 ---
 
+Contributors: Rustam Kumar (22CS01047), Sarsava Het Pravinbhai (22CS01061)
+
 ## 📑 Table of Contents
 
 - [Overview](#-overview)
