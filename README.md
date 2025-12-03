@@ -1,19 +1,32 @@
-Group Number: 1
+# Group Number: 1
 
-Contributors: <br>
-Rustam Kumar            (22CS01047) <br>
-Devanshu Dangi          (22CS01048) <br>
-Sarsava Het Pravinbhai  (22CS01061) <br>
-Debargha Nath           (22CS01070) <br>
-Sangam Kumar Mishra     (22CS01071) <br>
-Utkarsh Singh           (22CS01075) <br>
+## Contributors: <br>
+**1. Rustam Kumar**            (22CS01047) <br>
+**2. Devanshu Dangi**          (22CS01048) <br>
+**3.Sarsava Het Pravinbhai**  (22CS01061) <br>
+**4. Debargha Nath**           (22CS01070) <br>
+**5. Sangam Kumar Mishra**     (22CS01071) <br>
+**6. Utkarsh Singh**           (22CS01075) <br>
 
-Project files: <br>
-Bayesian Estimation of Student Placement Readiness and Risk <br>
-Planning Placement Strategy using GraphPlan and POP <br>
-Reinforcement Learning for Adaptive Interview Coaching <br>
-Search-Based Recommendation <br>
-LLM-Based Custom Career Guidance and Safe Motivation Response<br>
+## Project Modules: <br>
+
+1. Bayesian Estimation of Student Placement Readiness and Risk <br>
+2. Search-Based Recommendation <br>
+3. Planning Placement Strategy using GraphPlan and POP <br>
+4. Reinforcement Learning for Adaptive Interview Coaching <br>
+5. LLM-Based Custom Career Guidance and Safe Motivation Response<br>
 
 <br>
 All Modules have their individual README files as well
+
+### Note:
+
+Since all module folder names contain spaces, use the `cd` command with **quotes** or **escaped spaces**. For example:
+
+```bash
+# Using quotes
+cd "Reinforcement Learning for Adaptive Interview Coaching"
+
+# Or escaping spaces
+cd Reinforcement\ Learning\ for\ Adaptive\ Interview\ Coaching
+
