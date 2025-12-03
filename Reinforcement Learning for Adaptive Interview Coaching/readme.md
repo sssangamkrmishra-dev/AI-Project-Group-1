@@ -101,7 +101,7 @@ python -m venv .venv
 ```
 ### 3.3. Install dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 ### 3.4. Interact With The Agent
 - This command starts the trained RL agent and collects three required inputs from the user (described in the Example section below)
