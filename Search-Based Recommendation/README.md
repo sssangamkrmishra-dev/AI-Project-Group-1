@@ -1,4 +1,4 @@
-full_md = """# 📘 Module 2 — Search-Based Recommendation System
+📘 Module 2 — Search-Based Recommendation System
 ### *AI-Driven Personalized Placement Preparation – State-Space Search Module*
 
 This module implements **search-based reasoning** to recommend the **next best placement preparation activity** for a student, modeled as a **state-space problem**.  
