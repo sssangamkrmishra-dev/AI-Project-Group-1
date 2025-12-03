@@ -108,7 +108,48 @@ pip install -r requirement.txt
 ```bash
 python3 Dashboard.py
 ```
-## 4. Description of The Agent and The Environment
+## 4. System Definition: Agent and Environment
+
+### 4.1 State Space Definition (S)
+
+We represent the student's daily state **quantitatively**. At any day `t` the state vector `Sₜ` is:
+Sₜ = { Mₜ, Cₜ, Bₜ, Tₜ }
+
+Where:
+
+- **Mₜ (Mastery Level)** — Current skill level, range: **0 – 20**.  
+  Represents technical ability and problem-solving readiness.
+
+- **Cₜ (Confidence Level )** — Self-belief metric, range: **0 – 20**.  
+  Represents the student’s perceived ability to perform in placement tasks.
+
+- **Bₜ (Burnout Probability)** — Fatigue / stress level, range: **0.0 – 1.0**.  
+  Higher values indicate greater risk of demotivation or cognitive overload.
+
+- **Tₜ (Time remaining)** — Days left until placement: `Tₜ = 30 − t` (so `t = 0` → `T₀ = 30`).  
+  Encodes temporal urgency and remaining horizon for planning.
+
+> Note: `t` is an integer day index (e.g., `0..29`). All state values are normalized to the 0–100 scale for consistency.
+
+---
+
+### 4.2 Action Space Definition (A)
+
+The agent chooses from a discrete set of actions **A = {A1, A2, A3, A4}**. Each action has a clear intent and probabilistic outcome that affects the student state. Detailed state transition models are provided elsewhere.
+
+### Action set
+
+| Action | Name | Intent / High-level Effect |
+|--------|------|----------------------------|
+| **A1** | **Increase Difficulty** | **High risk, high reward.** Attempts to spike Mastery quickly. Success yields large gains in `Mₜ` (and often `Cₜ`); failure can reduce `Cₜ` and raise `Bₜ`. |
+| **A2** | **Offer Quick Revision** | **Stabilizing action.** Reinforces recent learning, preserves or slightly increases `Mₜ`, helps maintain `Cₜ`, and slightly reduces `Bₜ`. |
+| **A3** | **Give Encouragement** | **Psychological support.** Primarily increases `Cₜ` and significantly decreases `Bₜ`; minimal direct effect on `Mₜ`. |
+| **A4** | **Switch Topic** | **Break monotony.** Prevents or reduces burnout spikes, provides modest boosts to engagement and `Cₜ` while allowing continued learning across topics. |
+
+
+---
+
+## 5. Description of The Agent and The Environment
 
 ### The Agent / Placement Guide
 
@@ -123,7 +164,7 @@ The objective is to help the student improve efficiently while maintaining a hea
 - **Confidence building/ Increase The confidence to maximum level within 30 days**  
 - **Burnout prevention/ Keep The Burnout Probability as low as possible**
 
-The Action Suggested by the Agents are:
+The Action Suggested by the Agents are elements of Action Space (A) :
 * Increase difficult
 * Offer Ouick Revision
 * Give Encouragement
@@ -220,10 +261,76 @@ When time runs out:
 | **< 10** | `−50.0 penalty` |
 
 ---
+## 6. Algorithm Used: QLearning
 
-## 5. Exmaple and different cases
+### **Q-Learning Algorithm**
 
-### 5.1 Case: Low Confidence, High Mastery, Low Burnout
+Q-Learning is an **off-policy, model-free Temporal Difference (TD)** reinforcement learning algorithm.  
+It allows an agent to learn which actions lead to the best long-term outcomes without needing a model of the environment.
+
+---
+
+#### **1. Q-Table (Q)**  
+The **Q-Table** (`self.q_table`) stores learned values for each **state–action pair**.
+
+- **Q(s, a)** = the expected long-term reward for taking action **a** in state **s**.
+
+---
+
+#### **2. Action Selection — ε-Greedy Policy**
+
+The agent chooses actions using the **ε-greedy strategy**:
+
+- With probability **ε (epsilon)** → **explore** (pick a random action)
+- With probability **1 − ε** → **exploit** (pick the action with the highest Q-value)
+
+| Mode | Behavior | Purpose |
+|------|----------|---------|
+| Exploration | Try random actions | Discover new possibilities |
+| Exploitation | Use the best known action | Maximize reward |
+
+---
+
+#### **3. Learning Rule — Q-Value Update**
+
+The Q-value update is based on the **Bellman Optimality Equation**:
+
+```math
+Q(s,a) \leftarrow Q(s,a) + \alpha \left[ r + \gamma \max_{a'} Q(s',a') - Q(s,a) \right]
+Where:
+```
+
+
+| Symbol | Meaning |
+|--------|---------|
+| **s** | Current state |
+| **a** | Action taken |
+| **r** | Reward received |
+| **s′** | Next state |
+| max Q(s', a')| Best predicted value of next state's actions |
+| **α (alpha)** | Learning rate — how quickly new knowledge updates old |
+| **γ (gamma)** | Discount factor — how much future rewards matter |
+
+The term in brackets:
+```math
+r + \gamma \max_{a'} Q(s', a') - Q(s, a)
+```
+
+is called the **Temporal Difference (TD) Error** — it measures how far the current estimate is from the new target value.
+
+---
+
+### **Summary**
+
+Q-Learning improves its knowledge over time by comparing the expected reward with the actual outcome.  
+Eventually, the agent learns the **optimal policy**, meaning it consistently selects the best possible action in any situation.
+
+---
+
+---
+## 7. Exmaple and different cases
+
+### 7.1 Case: Low Confidence, High Mastery, Low Burnout
 - Student Enter his details as input:
 <img width="365" height="67" alt="Screenshot 2025-12-03 at 7 52 42 PM" src="https://github.com/user-attachments/assets/220ff645-710d-4bbb-83bc-713020ef7f65" />
 
@@ -236,7 +343,7 @@ When time runs out:
 * Analysis
 Since the student already demonstrates strong mastery but currently has low confidence, a suitable strategy is to introduce a "topic switch" action. Because of the student's existing skill level, they are likely to perform well in the new topic, which can help build confidence through successful attempts. This approach can also continue strengthening mastery while keeping burnout low, as the change in topic may provide novelty and prevent mental fatigue.
 
-### 5.2. Case: Low Confidence, High Mastery, High Burnout
+### 7.2. Case: Low Confidence, High Mastery, High Burnout
 - Student Enter his details as input:
 <img width="365" height="63" alt="Screenshot 2025-12-03 at 8 07 00 PM" src="https://github.com/user-attachments/assets/72df9725-e2d7-4325-b347-1acd8f1b1ec4" />
 
@@ -250,7 +357,7 @@ In output there is a series of "topic switch" action right at the beginning of a
 then increase the student's mastery and confidence.
 
 
-### 5.3. Case: High Confidence, Low Mastery, Low Burnout
+### 7.3. Case: High Confidence, Low Mastery, Low Burnout
 - Student Enter his details as input:
 <img width="365" height="64" alt="Screenshot 2025-12-03 at 8 10 57 PM" src="https://github.com/user-attachments/assets/e857122b-b0b9-4957-ae69-21f11fb58262" />
 
@@ -261,7 +368,7 @@ then increase the student's mastery and confidence.
 Since the student Have Low Mastery agent push the student to quickly "increase difficulty".
 But doing so increases burnout rapidly so the agent also provide "encouragment" to the student and suggest "switch topic".
 
-### 5.4. Case: Low Confidence, Low Mastery, High Burnout
+### 7.4. Case: Low Confidence, Low Mastery, High Burnout
 - Student Enter his details as input:
 <img width="365" height="62" alt="Screenshot 2025-12-03 at 8 15 39 PM" src="https://github.com/user-attachments/assets/f418807d-2d08-4ffd-ac2a-4d653616e8d0" />
 
@@ -274,7 +381,7 @@ Now, instead of wasting a day in giving encouragement it provides the student wi
 and lower burnout.
 
 
-### 5.5. Case: High Confidence, High Mastery, High Burnout
+### 7.5. Case: High Confidence, High Mastery, High Burnout
 - Student Enter his details as input:
 <img width="365" height="61" alt="Screenshot 2025-12-03 at 8 18 00 PM" src="https://github.com/user-attachments/assets/a5d5e43b-a004-46e8-af06-4da0ddf8d19e" />
 
@@ -286,6 +393,30 @@ and lower burnout.
 Since the student Have High Mastery and high Confidence agent suggest "increase difficulty".
 But doing so increases burnout rapidly, but since the student have good mastery we can spend a day in encouraging him to reduce his high burnout. 
 
+## 8. Comparison: Q-Learning Adaptive Strategy vs Fixed Schedule
+
+### 8.1 Observations
+* Adaptive Strategy:
+
+<img width="527" height="435" alt="Screenshot 2025-12-03 at 10 46 56 PM" src="https://github.com/user-attachments/assets/ec47299d-6229-455d-8fce-92b6bf21cc34" />
+
+
+* Fixed Strategy Always Increase Difficulty:
+
+<img width="527" height="597" alt="Screenshot 2025-12-03 at 10 47 46 PM" src="https://github.com/user-attachments/assets/f92d610c-1566-4466-8cbb-3331a24f88fe" />
+
+
+### 8.2 Results and Conclusions:
+* 8.2.1. Adaptive Strategy (Q-Learning):
+Dynamically chooses actions based on student state (Confidence, Mastery, Burnout).
+Encouragement is used when burnout is high to prevent critical failure.
+Results in smoother confidence growth and controlled burnout.
+* 8.2.2. Fixed Schedule:
+Repeats a static timeline regardless of student state.
+May push burnout too high or fail to improve mastery efficiently.
+* 8.2.3. Insights from Comparison:
+Q-Learning produces higher total reward by balancing mastery and confidence while avoiding burnout.
+Fixed schedules are vulnerable of pushing the student too much and making him burnout quickly
 
 
 
