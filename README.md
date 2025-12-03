@@ -17,7 +17,7 @@
 5. LLM-Based Custom Career Guidance and Safe Motivation Response (Utkarsh Singh) <br>
 
 <br>
-All Modules have their individual README files as well
+All Modules have their individual README files as well as Report.
 
 ### Note:
 
