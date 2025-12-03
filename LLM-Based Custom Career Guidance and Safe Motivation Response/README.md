@@ -59,14 +59,20 @@ placement_ai_syste/
 ## 🚀 Installation & Usage
 
 ### 1. Clone the Repository
-#git clone <repository_url>
-#cd placement_ai_system
+```bash
+git clone <repository_url>
+cd placement_ai_system
+```
+
 
 ### 2. Install Dependencies
--pip install -r requirements.txt
-
+```bash
+pip install -r requirements.txt
+```
 ### 3. Run the Application
--streamlit run app.py
+```bash
+streamlit run app.py
+```
 
 
 ### 4. Authenticate
