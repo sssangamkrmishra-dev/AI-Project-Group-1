@@ -1,36 +1,77 @@
-Module 5: LLM-Based Custom Career Guidance
+# Module 5: LLM-Based Custom Career Guidance & Safe Motivation Response
 
-This module acts as the "Voice" of the AI placement system. It takes data from the Bayesian Network (simulated via JSON) and generates personalized, safe, and company-specific advice.
+**Author:** Utkarsh Singh (22CS01075)  
+**Live Demo:** *Click Here to Launch AI Coach*  
+**Tech Stack:** Python, Streamlit, Google Gemini 2.5 Pro, RAG (Retrieval Augmented Generation)
 
-Features
+---
 
-RAG (Retrieval Augmented Generation): Retrieves specific interview secrets (Amazon Leadership Principles, etc.) based on the user's target.
+## 📌 Project Overview
 
-Safety Guardrails: Detects "Burnout" and forces a mental health break override.
+This module serves as the **“Voice”** of the AI Placement System.  
+While upstream mathematical models (Bayesian Networks, RL) estimate readiness, risks, and weaknesses,  
+**Module-5 converts those numbers into empathetic, actionable, and psychologically safe career advice.**  
 
-Reflexion: Checks for toxic positivity or false promises.
+A specialized **Safety-First Architecture** ensures:
 
-Few-Shot Prompting: Adapts tone based on emotional state.
+- Burnout detection  
+- Prevention of toxic positivity  
+- Tone adaptation based on emotional state  
+- Company-specific guidance through RAG  
+- Realistic, evidence-based coaching
 
-Setup
+---
 
-Install dependencies:
+## 🏗️ System Architecture
 
-pip install -r requirements.txt
+The system follows a **7-step pipeline**:
 
+1. **Input Reception**  
+   Receives student metadata (emotion, target company, weaknesses).
 
-Run the app:
+2. **RAG Retrieval**  
+   Pulls relevant insights from `knowledge_base.json`  
+   (Amazon LPs, Google bar-raiser patterns, anxiety protocols, etc.).
 
-streamlit run app.py
+3. **Prompt Augmentation**  
+   Injects retrieved snippets into a dynamic hybrid system prompt.
 
+4. **LLM Inference**  
+   Uses **Google Gemini 2.5 Pro** to generate tailored guidance.
 
-Enter your Google Gemini API Key in the sidebar.
+5. **Safety Reflexion**  
+   `safety_check.py` scans for unsafe patterns  
+   (burnout triggers, unrealistic promises, harmful motivation).
 
-Project Structure
+6. **Tone Controller**  
+   Adjusts output tone (Consoling, Neutral, Challenging).
 
-data/: Contains synthetic student profiles and company knowledge base.
+7. **Output Delivery**  
+   Final validated response is displayed on the Streamlit dashboard.
 
-modules/rag_engine.py: Handles context retrieval.
+> For detailed diagrams, refer to **Module_5_Report.pdf**
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+placement_ai_system/
+│
+├── data/
+│   ├── knowledge_base.json       # Synthetic Knowledge (Company Secrets, Interview Tips)
+│   └── student_input.json        # Simulated Student Profiles (Edge Cases)
+│
+├── modules/
+│   ├── __init__.py
+│   ├── rag_engine.py             # Logic to retrieve specific tips based on metadata
+│   ├── llm_client.py             # Gemini 2.5 Pro Client & Prompt Engineering
+│   └── safety_check.py           # Reflexion Logic (Burnout Circuit Breaker)
+│
+├── app.py                        # Streamlit Frontend Dashboard
+├── requirements.txt              # Project Dependencies
+└── README.md                     # Documentation
+
 
 modules/safety_check.py: Implements the "Circuit Breaker" safety logic.
 
