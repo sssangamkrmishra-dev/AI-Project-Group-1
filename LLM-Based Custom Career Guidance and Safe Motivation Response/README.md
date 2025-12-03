@@ -60,7 +60,7 @@ placement_ai_syste/
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository_url>
+git clone https://github.com/sssangamkrmishra-dev/AI-Project-Group-1.git
 cd placement_ai_system
 ```
 
