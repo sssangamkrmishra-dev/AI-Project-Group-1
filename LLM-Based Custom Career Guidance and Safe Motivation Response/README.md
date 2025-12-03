@@ -2,9 +2,10 @@
 
 **Author:** Utkarsh Singh (22CS01075)  
 **Group:** 1  
-**Project:** AI-Driven Personalized Placement Preparation
+**Project:** AI-Driven Personalized Placement Preparation and Resume
+Strategy Advisor
 
-[🔴 LIVE DEMO: Click here to launch the AI Coach](https://module-5ai-sf96evoy9dw5mdw2pjj4vp.streamlit.app/#ai-coach-response)
+[🔴 LIVE DEMO: Click here to launch the Website](https://module-5ai-sf96evoy9dw5mdw2pjj4vp.streamlit.app/#ai-coach-response)
 
 ---
 
@@ -24,8 +25,8 @@ Unlike generic chatbots, this system features a **Safety-First Architecture** th
 The system follows a **7-step pipeline** to generate safe and personalized advice:
 
 1. **Input Reception**: Receives student state (Emotion, Weakness, Target Company) from upstream modules
-2. **RAG Retrieval**: Queries the `knowledge_base.json` for company-specific secrets (e.g., Amazon Leadership Principles) and emotional management techniques [web:2]
-3. **Prompt Augmentation**: Injects retrieved context dynamically into a "Hybrid System Prompt" [web:3]
+2. **RAG Retrieval**: Queries the `knowledge_base.json` for company-specific secrets (e.g., Amazon Leadership Principles) and emotional management techniques 
+3. **Prompt Augmentation**: Injects retrieved context dynamically into a "Hybrid System Prompt" 
 4. **Inference**: Google Gemini 2.5 Pro generates the advice
 5. **Safety Reflexion**: A post-processing script scans for burnout triggers or banned phrases (e.g., "Guaranteed Job") [web:1]
 6. **Output**: Delivers the final validated response to the UI
@@ -37,7 +38,7 @@ The system follows a **7-step pipeline** to generate safe and personalized advic
 
 ## 📂 Project Structure
 ```plaintext
-placement_ai_syste/
+LLM-Based Custom Career Guidance and Safe Motivation Response/
 │
 ├── data/
 │   ├── knowledge_base.json       # Synthetic Knowledge (Company Secrets, Interview Tips)
@@ -61,7 +62,7 @@ placement_ai_syste/
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/sssangamkrmishra-dev/AI-Project-Group-1.git
-cd placement_ai_system
+cd LLM-Based Custom Career Guidance and Safe Motivation Response
 ```
 
 
@@ -116,18 +117,17 @@ streamlit run app.py
 ### Case 2: The Safety Override (Burnout)
 - **User:** Amit Kumar (State: Burnout)
 - **Scenario:** Studied 14 hours straight
-- **AI Response:** "I hear that you are feeling burnout. Please pause your preparation right now... Take the rest of the day off." *(Safety Circuit Breaker Activated)* [web:1][web:12]
-
+- **AI Response:** "I hear that you are feeling burnout. Please pause your preparation right now... Take the rest of the day off." *(Safety Circuit Breaker Activated)* 
 ### Case 3: The Challenge Mode (High Performer)
 - **User:** Sangam Kumar Mishra (Status: Candidate Master)
 - **Scenario:** Confident, high skill
-- **AI Response:** "The key now is to showcase your thought process... don't jump to the most optimized solution... explain the Brute Force first." *(Coaching Tone)* [web:8]
+- **AI Response:** "The key now is to showcase your thought process... don't jump to the most optimized solution... explain the Brute Force first." *(Coaching Tone)* 
 
 ---
 
 ## 📜 Dependencies
-streamlit # Frontend UI
-google-generativeai # LLM Interface
+**streamlit
+**google-generativeai 
 
 
 
@@ -157,18 +157,12 @@ For detailed architecture diagrams, evaluation metrics, and comparative analysis
 
 ---
 
-## 📧 Contact
+## 📧 Author
 
 **Utkarsh Singh**  
 Roll No: 22CS01075  
-Email: [your-email@example.com]
+
 
 ---
 
-## 📄 License
 
-This project is part of an academic assignment. All rights reserved.
-
-modules/safety_check.py: Implements the "Circuit Breaker" safety logic.
-
-modules/llm_client.py: Manages Prompt Engineering and API calls.
