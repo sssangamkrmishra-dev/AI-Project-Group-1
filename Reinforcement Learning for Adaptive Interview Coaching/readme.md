@@ -1,5 +1,7 @@
 ## Author: Debargha Nath (22CS01070)
 
+## 📄 View Project PDF:  [Click Here](./Reinforcement%20Learning%20for%20Adaptive%20Interview%20(Debargha%20Nath).pdf)
+
 
 # Reinforcement Learning for Adaptive Interview Coaching
 
