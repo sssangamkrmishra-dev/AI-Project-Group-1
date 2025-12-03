@@ -88,15 +88,16 @@ streamlit run app.py
 
 ### 1. Retrieval Augmented Generation (RAG)
 
-**Problem:** Standard LLMs often hallucinate or give generic advice [web:2][web:6].
+**Problem:** Standard LLMs often hallucinate or give generic advice.
 
-**Solution:** We created a synthetic dataset (`knowledge_base.json`) containing "Secret Tips" for companies like Amazon, Google, and Rippling. The system retrieves these tips only when relevant, ensuring the advice is grounded in reality [web:2].
+**Solution:** We created a synthetic dataset (`knowledge_base.json`) containing "Secret Tips" for companies like Amazon, Google, and Rippling. The system retrieves these tips only when relevant, ensuring the advice is grounded in reality.
 
 ### 2. Prompt Engineering (Tone Adaptation)
 
-**Problem:** A "Candidate Master" needs different advice than a beginner [web:8].
+**Problem:** A "Candidate Master" needs different advice than a beginner.
 
-**Solution:** We utilized **Few-Shot Prompting** with dynamic variable injection [web:3]. The system prompt changes instructions based on the `emotional_state` variable:
+**Solution:** We utilized **Few-Shot Prompting** with dynamic variable injection.
+The system prompt changes instructions based on the `emotional_state` variable:
 
 - **IF Anxious** → "Prioritize small wins, validate feelings"
 - **IF Confident** → "Focus on edge cases, challenge the user"
@@ -105,21 +106,24 @@ streamlit run app.py
 
 **Problem:** AI should never push a burnt-out student to study (Toxic Productivity) [web:12].
 
-**Solution:** A hard-coded logic layer (`safety_check.py`) intercepts the LLM output [web:1]. If `emotional_state == "Burnout"`, it overrides the AI and forces a **"Mental Health Protocol"** response, prescribing rest instead of code.
+**Solution:** A hard-coded logic layer (`safety_check.py`) intercepts the LLM output [web:1]. If `emotional_state == "Burnout"`, 
+it overrides the AI and forces a **"Mental Health Protocol"** response, prescribing rest instead of code.
 
 ---
 
 ## 📊 Sample Test Cases
 
-### Case 1: The Strategic Pivot (Anxious Student)
-- **User:** Utkarsh Singh (Target: Amazon, State: Anxious)
-- **Scenario:** Hasn't done coding contests
-- **AI Response:** Instead of forcing contests, the AI pivoted to his strength in AI/ML, advising him to use the "STAR Format" to frame his projects, thus bypassing his weakness while keeping him competitive [web:8]
-
-### Case 2: The Safety Override (Burnout)
+### Case 1: The Safety Override (Burnout)
 - **User:** Amit Kumar (State: Burnout)
 - **Scenario:** Studied 14 hours straight
-- **AI Response:** "I hear that you are feeling burnout. Please pause your preparation right now... Take the rest of the day off." *(Safety Circuit Breaker Activated)* 
+- **AI Response:** "I hear that you are feeling burnout. Please pause your preparation right now... Take the rest of the day off." *(Safety Circuit Breaker Activated)*
+
+### Case 2: The Strategic Pivot (Anxious Student)
+- **User:** Utkarsh Singh (Target: Amazon, State: Anxious)
+- **Scenario:** Hasn't done coding contests
+- **AI Response:** Instead of forcing contests, the AI pivoted to his strength in AI/ML, advising him to use the "STAR Format" to frame his projects, thus bypassing his weakness while keeping him competitive.
+
+
 ### Case 3: The Challenge Mode (High Performer)
 - **User:** Sangam Kumar Mishra (Status: Candidate Master)
 - **Scenario:** Confident, high skill
@@ -128,8 +132,8 @@ streamlit run app.py
 ---
 
 ## 📜 Dependencies
-**streamlit
-**google-generativeai 
+- **streamlit**
+- **google-generativeai**
 
 
 
@@ -137,19 +141,19 @@ streamlit run app.py
 
 ## 🔬 Technical Highlights
 
-- **Multi-Agent Architecture:** Modular design enables focused subtask handling and ease of future enhancements [web:2]
-- **Context-Aware Prompts:** Guides LLMs for high-fidelity outputs tailored to individual student needs [web:3][web:6]
-- **Privacy-Preserving:** Local processing ensures complete data locality [web:2]
-- **Dynamic Roadmap Generation:** Provides actionable learning plans with curated resources [web:6][web:8]
+- **Multi-Agent Architecture:** Modular design enables focused subtask handling and ease of future enhancements.
+- **Context-Aware Prompts:** Guides LLMs for high-fidelity outputs tailored to individual student needs.
+- **Privacy-Preserving:** Local processing ensures complete data locality.
+- **Dynamic Roadmap Generation:** Provides actionable learning plans with curated resources.
 
 ---
 
 ## 🎯 Key Contributions
 
-1. **Safety-First LLM System:** First placement prep tool with built-in burnout detection [web:1]
-2. **Hybrid RAG + Prompt Engineering:** Combines retrieval with dynamic tone adaptation [web:2][web:3]
-3. **Transparent Decision-Making:** Users receive career suggestions with clear rationales [web:2]
-4. **Real-World Validation:** Tested on edge cases representing diverse student emotional states [web:8]
+1. **Safety-First LLM System:** First placement prep tool with built-in burnout detection.
+2. **Hybrid RAG + Prompt Engineering:** Combines retrieval with dynamic tone adaptation.
+3. **Transparent Decision-Making:** Users receive career suggestions with clear rationales.
+4. **Real-World Validation:** Tested on edge cases representing diverse student emotional states.
 
 ---
 
@@ -167,6 +171,6 @@ Roll No: 22CS01075
 
 ---
 
-# Note:** See the `Module_5_Report.pdf` for the detailed explanantion of Sample Test Cases , Prompt Design and Dataset .
+# Note: See the `Module_5_Report.pdf` for the detailed explanantion of Sample Test Cases , Prompt Design and Dataset .
 
 ```
