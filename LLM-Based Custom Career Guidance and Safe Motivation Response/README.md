@@ -28,7 +28,7 @@ The system follows a **7-step pipeline** to generate safe and personalized advic
 2. **RAG Retrieval**: Queries the `knowledge_base.json` for company-specific secrets (e.g., Amazon Leadership Principles) and emotional management techniques 
 3. **Prompt Augmentation**: Injects retrieved context dynamically into a "Hybrid System Prompt" 
 4. **Inference**: Google Gemini 2.5 Pro generates the advice
-5. **Safety Reflexion**: A post-processing script scans for burnout triggers or banned phrases (e.g., "Guaranteed Job") [web:1]
+5. **Safety Reflexion**: A post-processing script scans for burnout triggers or banned phrases (e.g., "Guaranteed Job")
 6. **Output**: Delivers the final validated response to the UI
 7. **Feedback Loop**: Continuously adapts based on user interactions
 
