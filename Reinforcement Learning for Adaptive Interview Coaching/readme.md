@@ -108,6 +108,119 @@ pip install -r requirements.txt
 ```bash
 python3 Dashboard.py
 ```
+## 4. Description of The Agent and The Environment
+
+### The Agent / Placement Guide
+
+#### Purpose  
+The agent functions as a personalized placement-preparation guide. Based on the student's Confidence Level, Mastery Level, Burnout Probability.
+It dynamically generates a tailored **30-day improvement plan**. The Agent interactes with the Student(Environment) and every day observes what 
+are the effect of the suggested action on the state of the student and dynamically changes its strategy.
+
+The objective is to help the student improve efficiently while maintaining a healthy balance between:
+
+- **Skill growth/ Increase The Mastery to maximum level within 30 days**  
+- **Confidence building/ Increase The confidence to maximum level within 30 days**  
+- **Burnout prevention/ Keep The Burnout Probability as low as possible**
+
+The Action Suggested by the Agents are:
+* Increase difficult
+* Offer Ouick Revision
+* Give Encouragement
+* Switch Topic
+Impact of these actions are discussed in student/environment part below
+---
+
+### Input Assumptions
+
+Before generating the plan, the student provides the following input values:
+
+| **Parameter** | **Range** | **Meaning** |
+|---------------|-----------:|------------|
+| **Mastery Level** | `0 – 20` | Represents the student’s current understanding and preparedness in relevant technical and aptitude topics. |
+| **Confidence Level** | `0 – 20` | Measures how confident the student feels about performing well in placement activities (interviews, coding tests, assessments). |
+| **Burnout Probability** | `0.0 – 1.0` | Indicates the likelihood of mental fatigue or emotional strain. Higher values imply the need for pacing, rest days, or lighter strategies. |
+
+---
+
+### Output 
+
+The agent generates a personalized **30-day adaptive plan**. Each day consists of:
+
+- A recommended **action**  
+- An **observation phase**, where the agent observes the impact of the completed action on the student's:
+  - **Mastery level**
+  - **Confidence level**
+  - **Burnout probability**
+- A **state update and prediction step**, where the agent uses the newly observed values to:
+  - Update its own internal student state
+  - Dynamically adjust future recommendations
+  - Predict the next optimal action based on progress.
+This makes the plan responsive and personalized, evolving each day based on the student's performance and well-being.
+---
+
+### The Environment/ Student
+
+The student represents the learning environment in which the agent operates.  
+Their state is defined by three evolving attributes:
+
+- **Mastery:** Reflects current technical understanding and preparedness level.
+- **Confidence:** Indicates self-belief and readiness to face placement challenges.
+- **Burnout Probability:** Measures emotional strain, fatigue, or risk of losing motivation.
+
+As the student progresses through the 30-day plan, these values change based on the recommended actions, forming the feedback loop the agent learns from.
+#### Action Impact Summary
+
+| Action | Name | Primary Effects on Student State |
+|--------|-------|----------------------------------|
+| `0` | **Increase Difficulty** | - Success improves **Mastery (+2)** and **Confidence (+2)**, but slightly increases **Burnout (+0.1)**. <br> - Failure reduces **Confidence (−2)** and increases **Burnout (+0.15)**. |
+| `1` | **Switch Topic** | - Reduces **Burnout (−0.2)**. <br> - Slight increase in **Confidence (+1)**. |
+| `2` | **Give Encouragement** | - Strong reduction in **Burnout (−0.4)**. <br> - Boosts **Confidence (+3)**. |
+| `3` | **Offer Quick Revision** | - Gradually improves **Mastery (+1)**. <br> - Slightly reduces **Burnout (−0.1)**. |
+
+### Reward:
+
+The reward system evaluates how effective each action is in improving the student’s state. The reward is calculated using several factors:
+
+---
+
+*  Positive Contributions
+
+| Component | Description | Impact on Reward |
+|-----------|-------------|------------------|
+| **Mastery Gain** | Increase in technical understanding | `+5.0 × mastery_gain` |
+| **Confidence Gain** | Growth in self-belief | `+1.5 × confidence_gain` |
+| **Burnout Reduction** | Lower stress or fatigue | `+25.0 × burn_reduction` |
+
+---
+
+* Special Conditions
+
+| Condition | Action Effect | Reward Outcome |
+|----------|--------------|----------------|
+| Burnout was **high (> 0.7)** and agent chooses **Encouragement (action 2)** | Smart recovery step | `+50.0 bonus` |
+| Burnout was **high (> 0.7)** but agent chooses any action **other than 2** | Poor decision | `−20.0 penalty` |
+| Burnout becomes **extreme (> 0.9)** | Risky exhaustion | `−30.0 penalty` |
+| Burnout reaches **1.0 or more** | Critical failure | `−1000.0 penalty` |
+
+---
+
+* Time-Based Penalty
+
+- A small penalty is applied each step to discourage unnecessary actions:  
+  `reward -= 0.05 × steps_used`
+
+---
+
+* End-of-Plan Bonus
+When time runs out:
+| Final Mastery | Outcome |
+|---------------|---------|
+| **≥ 16** | `+50.0 bonus` |
+| **< 10** | `−50.0 penalty` |
+
+---
+
 ## 5. Exmaple and different cases
 
 ### 5.1 Case: Low Confidence, High Mastery, Low Burnout
