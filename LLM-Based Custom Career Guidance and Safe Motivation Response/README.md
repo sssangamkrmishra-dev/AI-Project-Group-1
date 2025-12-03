@@ -32,7 +32,9 @@ The system follows a **7-step pipeline** to generate safe and personalized advic
 6. **Output**: Delivers the final validated response to the UI
 7. **Feedback Loop**: Continuously adapts based on user interactions
 
-> **Note:** See the `Module_5_Report.pdf` for the detailed UML/Architecture Diagram.
+![System Architecture Placeholder](./architecture.png)
+
+
 
 ---
 
@@ -165,4 +167,6 @@ Roll No: 22CS01075
 
 ---
 
+# Note:** See the `Module_5_Report.pdf` for the detailed explanantion of Sample Test Cases , Prompt Design and Dataset .
 
+```
