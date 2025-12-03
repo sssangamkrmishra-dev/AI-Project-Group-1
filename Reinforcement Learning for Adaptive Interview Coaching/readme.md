@@ -86,7 +86,7 @@ This module provides an interactive interface for deploying and testing the trai
 ### 3.1. Clone the repo
 ```bash
 git clone https://github.com/sssangamkrmishra-dev/AI-Project-Group-1.git
-cd Reinforcement Learning for Adaptive Interview Coaching
+cd Reinforcement\ Learning\ for\ Adaptive\ Interview\ Coaching
 ```
 ### 3.2. Create & activate a Python virtual environment (recommended)
 - macOS / Linux:
