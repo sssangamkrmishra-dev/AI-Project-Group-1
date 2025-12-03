@@ -1,0 +1,488 @@
+[ 
+  {
+    "id": "S101",
+    "name": "Sangam Kumar Mishra",
+    "target_company": "Rippling",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in Competitive Programming",
+    "recent_event": "Reached Candidate Master on Codeforces",
+    "days_to_interview": 10
+  },
+  {
+    "id": "S102",
+    "name": "Devanshu Dangi",
+    "target_company": "Tower Research / HFT",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in Advanced DP & Math",
+    "recent_event": "Solved all 4 problems in LeetCode Weekly Contest",
+    "days_to_interview": 5
+  },
+  {
+    "id": "S103",
+    "name": "Utkarsh Singh",
+    "target_company": "Amazon",
+    "emotional_state": "Anxious",
+    "technical_status": "Good in DSA and AI/ML",
+    "recent_event": "Has not participated in any coding contests yet",
+    "days_to_interview": 25
+  },
+  {
+    "id": "S104",
+    "name": "Rustam Kumar",
+    "target_company": "Microsoft",
+    "emotional_state": "Frustrated",
+    "technical_status": "Good in web development and DSA",
+    "recent_event": "Struggling to clear Interviews",
+    "days_to_interview": 15
+  },
+  {
+    "id": "S001",
+    "name": "Rahul Sharma",
+    "target_company": "Amazon",
+    "emotional_state": "High Anxiety",
+    "technical_status": "Weak in Dynamic Programming",
+    "recent_event": "Failed Mock Interview 2 with low score",
+    "days_to_interview": 4
+  },
+  {
+    "id": "S002",
+    "name": "Priya Verma",
+    "target_company": "Google",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in Graph Algorithms",
+    "recent_event": "Solved 3 Hard LeetCode problems",
+    "days_to_interview": 15
+  },
+  {
+    "id": "S003",
+    "name": "Amit Kumar",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Burnout",
+    "technical_status": "Average in Aptitude",
+    "recent_event": "Studied for 14 hours straight yesterday",
+    "days_to_interview": 2
+  },
+  {
+    "id": "S004",
+    "name": "Sneha Gupta",
+    "target_company": "Microsoft",
+    "emotional_state": "Neutral",
+    "technical_status": "Weak in System Design",
+    "recent_event": "Completed Resume Review",
+    "days_to_interview": 30
+  },
+  {
+    "id": "S005",
+    "name": "Vikram Singh",
+    "target_company": "Amazon",
+    "emotional_state": "Overconfident",
+    "technical_status": "Average in Arrays",
+    "recent_event": "Skipped mock test thinking it's too easy",
+    "days_to_interview": 10
+  },
+  {
+    "id": "S006",
+    "name": "Anjali Das",
+    "target_company": "Google",
+    "emotional_state": "Sad",
+    "technical_status": "Weak in Recursion",
+    "recent_event": "Rejected in Online Assessment",
+    "days_to_interview": 45
+  },
+  {
+    "id": "S007",
+    "name": "Rohan Mehta",
+    "target_company": "Startup",
+    "emotional_state": "Frustrated",
+    "technical_status": "Stuck on Linked List reversal",
+    "recent_event": "Code kept crashing for 2 hours",
+    "days_to_interview": 20
+  },
+  {
+    "id": "S008",
+    "name": "Kavita Reddy",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Anxious",
+    "technical_status": "Weak in Verbal Ability",
+    "recent_event": "Scored low in English mock",
+    "days_to_interview": 5
+  },
+  {
+    "id": "S009",
+    "name": "Arjun Nair",
+    "target_company": "Microsoft",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in OOPs",
+    "recent_event": "Built a full stack project",
+    "days_to_interview": 60
+  },
+  {
+    "id": "S010",
+    "name": "Ishaan Malhotra",
+    "target_company": "Amazon",
+    "emotional_state": "Burnout",
+    "technical_status": "Strong in DSA",
+    "recent_event": "Has not slept properly for 3 days",
+    "days_to_interview": 1
+  },
+  {
+    "id": "S011",
+    "name": "Meera Iyer",
+    "target_company": "Google",
+    "emotional_state": "Confused",
+    "technical_status": "Average in DP",
+    "recent_event": "Don't know whether to focus on CP or Dev",
+    "days_to_interview": 40
+  },
+  {
+    "id": "S012",
+    "name": "Siddharth Rao",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Neutral",
+    "technical_status": "Good in SQL",
+    "recent_event": "Practicing database queries",
+    "days_to_interview": 12
+  },
+  {
+    "id": "S013",
+    "name": "Nisha Patil",
+    "target_company": "Startup",
+    "emotional_state": "Anxious",
+    "technical_status": "Weak in React/Node",
+    "recent_event": "Interviewer asked hard JS questions",
+    "days_to_interview": 7
+  },
+  {
+    "id": "S014",
+    "name": "Varun Chopra",
+    "target_company": "Microsoft",
+    "emotional_state": "Sad",
+    "technical_status": "Average in Trees",
+    "recent_event": "Friends got placed, he didn't",
+    "days_to_interview": 25
+  },
+  {
+    "id": "S015",
+    "name": "Pooja Hegde",
+    "target_company": "Amazon",
+    "emotional_state": "Angry",
+    "technical_status": "Weak in Greedy Algorithms",
+    "recent_event": "System crashed during coding contest",
+    "days_to_interview": 14
+  },
+  {
+    "id": "S016",
+    "name": "Aditya Joshi",
+    "target_company": "Google",
+    "emotional_state": "Overwhelmed",
+    "technical_status": "Weak in Graphs and DP",
+    "recent_event": "Trying to learn 5 topics at once",
+    "days_to_interview": 8
+  },
+  {
+    "id": "S017",
+    "name": "Simran Kaur",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in Aptitude",
+    "recent_event": "Topped the class mock test",
+    "days_to_interview": 3
+  },
+  {
+    "id": "S018",
+    "name": "Kabir Khan",
+    "target_company": "Microsoft",
+    "emotional_state": "Burnout",
+    "technical_status": "Strong in Coding",
+    "recent_event": "Feeling physically sick from stress",
+    "days_to_interview": 2
+  },
+  {
+    "id": "S019",
+    "name": "Riya Sen",
+    "target_company": "Startup",
+    "emotional_state": "Insecure",
+    "technical_status": "Weak in Communication",
+    "recent_event": "Stumbled during HR introduction",
+    "days_to_interview": 6
+  },
+  {
+    "id": "S020",
+    "name": "Dev Patel",
+    "target_company": "Amazon",
+    "emotional_state": "Neutral",
+    "technical_status": "Reviewing Leadership Principles",
+    "recent_event": "Reading company documentation",
+    "days_to_interview": 5
+  },
+  {
+    "id": "S021",
+    "name": "Tanvi Shah",
+    "target_company": "Google",
+    "emotional_state": "Anxious",
+    "technical_status": "Weak in Trie Data Structure",
+    "recent_event": "Saw a hard problem and panicked",
+    "days_to_interview": 20
+  },
+  {
+    "id": "S022",
+    "name": "Aryan Bansal",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Frustrated",
+    "technical_status": "Weak in Pseudo Code",
+    "recent_event": "Confused by syntax logic",
+    "days_to_interview": 4
+  },
+  {
+    "id": "S023",
+    "name": "Neha Agarwal",
+    "target_company": "Microsoft",
+    "emotional_state": "Confident",
+    "technical_status": "Average in OS Concepts",
+    "recent_event": "Revised OS notes successfully",
+    "days_to_interview": 18
+  },
+  {
+    "id": "S024",
+    "name": "Rajesh Koothrappali",
+    "target_company": "Startup",
+    "emotional_state": "Sad",
+    "technical_status": "Strong in Backend",
+    "recent_event": "Startup froze hiring",
+    "days_to_interview": 30
+  },
+  {
+    "id": "S025",
+    "name": "Sana Mir",
+    "target_company": "Amazon",
+    "emotional_state": "Overconfident",
+    "technical_status": "Weak in Edge Cases",
+    "recent_event": "Ignored constraints in problem statement",
+    "days_to_interview": 9
+  },
+  {
+    "id": "S026",
+    "name": "Farhan Qureshi",
+    "target_company": "Google",
+    "emotional_state": "Overwhelmed",
+    "technical_status": "Weak in Advanced Graphs",
+    "recent_event": "Syllabus looks too huge",
+    "days_to_interview": 12
+  },
+  {
+    "id": "S027",
+    "name": "Nikhil Kamath",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Neutral",
+    "technical_status": "Good in Basic C++",
+    "recent_event": "Solving pattern printing problems",
+    "days_to_interview": 10
+  },
+  {
+    "id": "S028",
+    "name": "Zara Sheikh",
+    "target_company": "Microsoft",
+    "emotional_state": "Anxious",
+    "technical_status": "Weak in System Design Scalability",
+    "recent_event": "Couldn't explain load balancing",
+    "days_to_interview": 7
+  },
+  {
+    "id": "S029",
+    "name": "Bhavya Jain",
+    "target_company": "Startup",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in Deployment/Docker",
+    "recent_event": "Deployed app to AWS successfully",
+    "days_to_interview": 14
+  },
+  {
+    "id": "S030",
+    "name": "Manish Pandey",
+    "target_company": "Amazon",
+    "emotional_state": "Burnout",
+    "technical_status": "Strong in Trees",
+    "recent_event": "Headache from screen time",
+    "days_to_interview": 3
+  },
+  {
+    "id": "S031",
+    "name": "Esha Gupta",
+    "target_company": "Google",
+    "emotional_state": "Sad",
+    "technical_status": "Average in Sliding Window",
+    "recent_event": "Performed poorly in Codeforces contest",
+    "days_to_interview": 25
+  },
+  {
+    "id": "S032",
+    "name": "Uday Chopra",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Lazy/Procrastinating",
+    "technical_status": "Weak in Basics",
+    "recent_event": "Watched Netflix instead of studying",
+    "days_to_interview": 2
+  },
+  {
+    "id": "S033",
+    "name": "Geeta Phogat",
+    "target_company": "Microsoft",
+    "emotional_state": "Angry",
+    "technical_status": "Weak in Debugging",
+    "recent_event": "Spent 4 hours on a missing semicolon",
+    "days_to_interview": 15
+  },
+  {
+    "id": "S034",
+    "name": "Hardeep Singh",
+    "target_company": "Startup",
+    "emotional_state": "Confused",
+    "technical_status": "Average in API Design",
+    "recent_event": "Confused between REST and GraphQL",
+    "days_to_interview": 20
+  },
+  {
+    "id": "S035",
+    "name": "Ira Khan",
+    "target_company": "Amazon",
+    "emotional_state": "Anxious",
+    "technical_status": "Weak in Behavioral Answers",
+    "recent_event": "Stuttered during mock HR round",
+    "days_to_interview": 1
+  },
+  {
+    "id": "S036",
+    "name": "Jatin Sarna",
+    "target_company": "Google",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in Competitive Programming",
+    "recent_event": "Reached Candidate Master rank",
+    "days_to_interview": 30
+  },
+  {
+    "id": "S037",
+    "name": "Kiran Bedi",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Overwhelmed",
+    "technical_status": "Weak in Logical Reasoning",
+    "recent_event": "Failed logical reasoning section",
+    "days_to_interview": 5
+  },
+  {
+    "id": "S038",
+    "name": "Lalit Modi",
+    "target_company": "Microsoft",
+    "emotional_state": "Neutral",
+    "technical_status": "Reviewing previous interview experiences",
+    "recent_event": "Reading GeeksForGeeks archives",
+    "days_to_interview": 40
+  },
+  {
+    "id": "S039",
+    "name": "Mona Lisa",
+    "target_company": "Startup",
+    "emotional_state": "Sad",
+    "technical_status": "Weak in LeetCode Medium",
+    "recent_event": "Can't solve problems without hints",
+    "days_to_interview": 10
+  },
+  {
+    "id": "S040",
+    "name": "Naman Mathur",
+    "target_company": "Amazon",
+    "emotional_state": "Overconfident",
+    "technical_status": "Weak in Object Oriented Design",
+    "recent_event": "Thinks LLD is useless",
+    "days_to_interview": 8
+  },
+  {
+    "id": "S041",
+    "name": "Omkar Shetty",
+    "target_company": "Google",
+    "emotional_state": "Burnout",
+    "technical_status": "Strong in Algorithms",
+    "recent_event": "Considering dropping out of placement drive",
+    "days_to_interview": 6
+  },
+  {
+    "id": "S042",
+    "name": "Parineeti Chopra",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Anxious",
+    "technical_status": "Average in Python",
+    "recent_event": "Forgot syntax during test",
+    "days_to_interview": 2
+  },
+  {
+    "id": "S043",
+    "name": "Qureshi Faizal",
+    "target_company": "Microsoft",
+    "emotional_state": "Frustrated",
+    "technical_status": "Weak in Bit Manipulation",
+    "recent_event": "Stuck on bitwise operators",
+    "days_to_interview": 12
+  },
+  {
+    "id": "S044",
+    "name": "Rani Mukherjee",
+    "target_company": "Startup",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in Portfolio Projects",
+    "recent_event": "Recruiter praised GitHub profile",
+    "days_to_interview": 5
+  },
+  {
+    "id": "S045",
+    "name": "Saurabh Shukla",
+    "target_company": "Amazon",
+    "emotional_state": "Sad",
+    "technical_status": "Weak in Bar Raiser round",
+    "recent_event": "Received rejection mail today",
+    "days_to_interview": 60
+  },
+  {
+    "id": "S046",
+    "name": "Tanya Maniktala",
+    "target_company": "Google",
+    "emotional_state": "Anxious",
+    "technical_status": "Average in Math",
+    "recent_event": "Weak in probability questions",
+    "days_to_interview": 15
+  },
+  {
+    "id": "S047",
+    "name": "Urvashi Rautela",
+    "target_company": "TCS_Infosys_Wipro",
+    "emotional_state": "Neutral",
+    "technical_status": "Good communication",
+    "recent_event": "Practicing group discussion",
+    "days_to_interview": 8
+  },
+  {
+    "id": "S048",
+    "name": "Vicky Kaushal",
+    "target_company": "Microsoft",
+    "emotional_state": "Overwhelmed",
+    "technical_status": "Weak in Concurrency/Threading",
+    "recent_event": "Multithreading concepts are confusing",
+    "days_to_interview": 4
+  },
+  {
+    "id": "S049",
+    "name": "Wasim Akram",
+    "target_company": "Startup",
+    "emotional_state": "Burnout",
+    "technical_status": "Average in CSS/Frontend",
+    "recent_event": "Eye strain from 12 hours coding",
+    "days_to_interview": 1
+  },
+  {
+    "id": "S050",
+    "name": "Xavier D'Souza",
+    "target_company": "Amazon",
+    "emotional_state": "Confident",
+    "technical_status": "Strong in Arrays/Strings",
+    "recent_event": "Solved Blind 75 list",
+    "days_to_interview": 7
+  }
+]

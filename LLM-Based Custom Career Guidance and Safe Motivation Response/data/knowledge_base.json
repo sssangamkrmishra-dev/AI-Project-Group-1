@@ -1,0 +1,972 @@
+{
+  "company_protocols": {
+    "Amazon": {
+      "focus_areas": ["Leadership Principles", "Scalability", "Edge Cases"],
+      "secret_tip": "Amazon is obsessed with their 16 Leadership Principles (LPs). You MUST answer behavioral questions using the STAR format and link them to principles like 'Customer Obsession' or 'Bias for Action'. For coding, they care deeply about handling large inputs.",
+      "hiring_bar": "They look for 'Bar Raisers' - candidates who are better than 50% of the current employees in that role."
+    },
+    "Google": {
+      "focus_areas": ["Graph Algorithms", "Dynamic Programming", "Googliness"],
+      "secret_tip": "Google interviewers often give ambiguous questions intentionally. You MUST ask clarifying questions before coding. They value 'Googliness' (intellectual humility and collaboration) as much as code efficiency.",
+      "hiring_bar": "They prioritize code readability and optimization. Brute force solutions usually lead to rejection."
+    },
+    "Microsoft": {
+      "focus_areas": ["System Design", "OOPs", "Culture Fit"],
+      "secret_tip": "Microsoft focuses heavily on Testing. You should actively mention how you would test your code (Unit Tests). They also value a 'Growth Mindset'—show you can learn from failure.",
+      "hiring_bar": "Strong emphasis on collaboration and legacy code maintenance."
+    },
+    "TCS_Infosys_Wipro": {
+      "focus_areas": ["Aptitude", "Basic Coding", "Communication"],
+      "secret_tip": "For service-based companies, Communication Confidence > Technical Depth. If you know the logic but can't speak, you fail. If you speak well and know basic logic, you pass. Focus on Aptitude (Quants/Verbal) as it is the first filter.",
+      "hiring_bar": "Reliability and willingness to learn new technologies."
+    }
+  },
+ 
+  "interview_topics": {
+    "Resume": "Resume Tip: Do not list skills you cannot justify. Use the 'X-Y-Z' formula: 'Accomplished [X] as measured by [Y], by doing [Z]'. Example: 'Reduced API latency by 20% by implementing Redis caching'.",
+    "System_Design": "Start broad (High Level Design) then go deep. Always discuss Trade-offs (e.g., consistency vs availability). Never jump straight to specific tools like 'Kafka' without justifying the need for a message queue.",
+    "HR_Round": "Be honest but positive. Never say 'I have no weaknesses'. Say 'I struggle with X, but I am fixing it by doing Y'. Always research the company's recent news before the call.",
+    "DSA_Approach": "Don't code immediately. 1. Clarify constraints (input size, range). 2. Discuss Brute Force. 3. Optimize approach. 4. Dry run with a sample case. 5. Only then, write code.",
+    "Code_Quality": "Write production-ready code. Use meaningful variable names (`userIndex` instead of `i`). Modularize logic into helper functions. Handle edge cases (null, empty inputs) explicitly.",
+    "Introduction": "Keep 'Tell me about yourself' to 90 seconds. Structure: Current Status -> Past relevant experience/projects -> Why you want this role. Don't recite your bio-data.",
+    "Stuck_In_Interview": "Silence is the enemy. If you are stuck, think out loud. Say, 'I am thinking of using a Hashmap to store counts, but I am worried about space complexity.' The interviewer is there to help, give them a chance.",
+    "Questions_For_Interviewer": "Never say 'No questions'. Ask intelligent questions: 'What is the biggest technical challenge the team is facing?' or 'How does the team handle code reviews?'.",
+    "Time_Complexity": "Always proactively state Time and Space complexity after solving. Don't wait to be asked. If you used O(N) space, justify why it was necessary.",
+    "Project_Explanation": "Use the STAR method (Situation, Task, Action, Result). Focus 70% of the time on the 'Action' (what YOU did, not what the 'team' did) and the 'Result' (impact).",
+    "Debugging": "If your code fails a test case, don't guess. Dry run the specific failing input line-by-line on paper/whiteboard. Show a systematic debugging mindset.",
+    "Behavioral_Conflict": "When asked about conflict, never blame teammates. Focus on the solution. 'We had a disagreement on API design. I listened to his point, presented data on latency, and we reached a middle ground.'",
+    "Object_Oriented_Design": "Adhere to SOLID principles. Specifically, ensure classes have a Single Responsibility. Don't create a 'God Class' that handles DB, UI, and Logic all at once.",
+    "Database_Choice": "Don't say 'I used MongoDB because it's easy'. Say 'I chose NoSQL because the data schema was evolving and read-heavy'. Justify technical choices with requirements.",
+    "Operating_Systems": "Understand the difference between a Process and a Thread. Be ready to explain Concurrency, Deadlocks, and Race Conditions with real-life examples (e.g., banking transactions).",
+    "Networking_Basics": "Know what happens when you type a URL in a browser: DNS resolution -> TCP Handshake -> HTTP Request -> Server Processing -> Response.",
+    "Virtual_Interview_Etiquette": "Look at the camera lens, not the screen, to simulate eye contact. Ensure your background is clean. Have a pen and paper ready for dry runs.",
+    "Gap_Year_Justification": "Own your gap. 'I took a year to prepare for GATE/UPSC. While it didn't work out, it taught me discipline and I kept my coding skills sharp by building X project.'",
+    "Negotiation": "If you have an offer, don't accept immediately. Express gratitude and excitement, but ask for time to review the details. If you have competing offers, mention them politely to increase leverage.",
+    "System_Design_Scalability": "When asked to scale, think in layers: 1. Load Balancer. 2. Caching (Redis). 3. Database Sharding/Replication. 4. Asynchronous Processing (Queues).",
+    "Mock_Interview_Analysis": "Record your mocks. Watch them to catch filler words ('um', 'like', 'actually') and body language issues (slouching, not smiling).",
+    "Handling_Unknown_Questions": "If you don't know an answer (e.g., 'What is CAP theorem?'), don't bluff. Say, 'I haven't worked with that concept directly, but based on what I know about distributed systems, I assume...'",
+    "Post_Interview": "Send a personalized 'Thank You' email within 24 hours. Mention a specific topic you enjoyed discussing. It leaves a lasting positive impression."
+  },
+  "emotional_scenarios": [
+    {
+      "user_text": "I don't know what career path fits me. I'm scared to choose wrong.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Uncertainty is normal. Try exploring small projects in different fields to discover what energizes you."
+    },
+   
+    {
+      "user_text": "I'm worried I will fail my upcoming internship interview.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "It's normal to feel anxious. Focus on practicing common questions and revising your projects. You're more prepared than you think."
+    },
+     {
+      "user_text": "I'm preparing for GATE but I feel like I'm not smart enough.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Your effort matters more than perfection. Stick to a small and consistent routine—progress will follow."
+    },
+    {
+      "user_text": "I keep snapping at everyone for no reason.",
+      "emotion_label": "angry",
+      "risk_level": "low",
+      "sample_reply": "It sounds like stress may be building up. A short break or grounding activity can help you reset."
+    },
+    {
+      "user_text": "Everything is piling up and I can’t keep up anymore.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Break tasks into small steps. Focus on one thing at a time. You don't have to solve everything today."
+    },
+    {
+      "user_text": "I feel like I'm a burden to everyone.",
+      "emotion_label": "sad",
+      "risk_level": "critical",
+      "sample_reply": "You deserve support and care. Reaching out to someone you trust or a professional can make a real difference."
+    },
+   
+    {
+      "user_text": "I tried so hard but nothing works. What's the point?",
+      "emotion_label": "sad",
+      "risk_level": "critical",
+      "sample_reply": "I’m really sorry you're feeling this exhausted. Please consider talking to a trusted friend or professional—support can help lighten this weight."
+    },
+     {
+      "user_text": "I feel empty lately. Nothing excites me anymore.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "I'm sorry you're feeling this way. Try reconnecting with small activities you once enjoyed. Progress can start with tiny steps."
+    },
+    {
+      "user_text": "I am angry because my teammates don’t take responsibility.",
+      "emotion_label": "angry",
+      "risk_level": "low",
+      "sample_reply": "That’s frustrating. Maybe try discussing expectations clearly—it can make collaboration smoother."
+    },
+    {
+      "user_text": "I want to switch careers but I’m scared everyone will judge me.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Career changes take courage. Focus on what aligns with your growth; others' opinions don't define your path."
+    },
+    {
+      "user_text": "My contest rating keeps falling every week.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Ratings fluctuate—it’s completely normal. Try solving topic-wise problems, revise fundamental concepts, and give yourself consistent practice time."
+    },
+    {
+      "user_text": "I'm losing motivation to prepare for placements.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Burnout happens. Try shorter sessions with clear goals. Celebrate small wins to rebuild momentum."
+    },
+    {
+      "user_text": "I can't sleep because I keep overthinking my future.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Your worry is valid. Try grounding before sleep—like journaling or breathing exercises—to calm your mind."
+    },
+    {
+      "user_text": "My coding speed is too slow compared to others.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Speed develops with practice. Focus on solving problems cleanly; speed naturally improves over time."
+    },
+    {
+      "user_text": "I failed my last four interviews. I feel hopeless.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Repeated failures hurt, but they also reveal patterns. Let's analyze: Is it DSA, communication, or project explanation? Work on one area at a time."
+    },
+    {
+      "user_text": "I can’t explain my projects clearly in interviews.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Try preparing a simple structure: problem → your contribution → tech used → impact. Practicing aloud improves clarity."
+    },
+    {
+      "user_text": "I keep forgetting basic DSA concepts.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Revisit the fundamentals using spaced repetition. Topic-wise practice builds long-term retention."
+    },
+    {
+      "user_text": "I feel overwhelmed preparing for aptitude, DSA, CS fundamentals, and projects all at once.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Make a weekly plan with 2–3 focus areas. You don’t need to study everything every day."
+    },
+    {
+      "user_text": "I think I'm disappointing everyone around me.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "You’re trying your best, and that’s meaningful. Consider sharing your feelings with someone trusted—it can ease the pressure."
+    },
+    {
+      "user_text": "I'm scared of giving interviews now.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Interview fear is common. Practice mock interviews in a low-pressure environment to rebuild confidence."
+    },
+    {
+      "user_text": "My friends are getting placed and I’m still struggling.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Everyone’s timeline is different. Focus on improving your strengths and addressing specific weaknesses step-by-step."
+    },
+    {
+      "user_text": "I freeze during DSA rounds.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Practice timed sessions. Start with easy problems to build confidence under pressure."
+    },
+    {
+      "user_text": "I’m confused whether I should pick software or data science.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Try sample mini-projects in both. Notice what feels more engaging and natural—it’s a reliable signal."
+    },
+    {
+      "user_text": "I get frustrated when I can’t solve problems quickly.",
+      "emotion_label": "angry",
+      "risk_level": "low",
+      "sample_reply": "Frustration is normal. Try slowing down and understanding the logic deeply—speed follows mastery."
+    },
+    {
+      "user_text": "I haven’t made any progress this week.",
+      "emotion_label": "disappointed",
+      "risk_level": "low",
+      "sample_reply": "Progress isn’t always linear. Reflect on what blocked you and start with one small achievable task."
+    },
+    {
+      "user_text": "My placement mock test score dropped again.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Scores fluctuate. Review incorrect answers and reinforce weak topics instead of judging yourself."
+    },
+    {
+      "user_text": "I can’t concentrate on studying.",
+      "emotion_label": "distracted",
+      "risk_level": "low",
+      "sample_reply": "Try the pomodoro technique—25 minutes focused, 5 minutes break. It can significantly improve attention."
+    },
+    {
+      "user_text": "I'm scared I won't get a job this year.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Fear grows from uncertainty. Build a plan: DSA + project revision + mock interviews. One step at a time."
+    },
+    {
+      "user_text": "I feel numb and disconnected lately.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Feeling numb is tough. Try small grounding activities and reach out to someone you trust."
+    },
+    {
+      "user_text": "I don’t enjoy coding anymore.",
+      "emotion_label": "uncertain",
+      "risk_level": "medium",
+      "sample_reply": "Burnout might be affecting your interest. Take a short break and revisit coding with fun mini-projects."
+    },
+    {
+      "user_text": "I get too anxious before coding contests.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Do warm-up problems before contests to ease tension and build confidence."
+    },
+    {
+      "user_text": "I'm not good at communication.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Communication improves with practice. Try recording yourself explaining solutions—review and refine."
+    },
+    {
+      "user_text": "I failed the HR round even though technical was good.",
+      "emotion_label": "disappointed",
+      "risk_level": "low",
+      "sample_reply": "HR rounds check clarity and confidence. Practice concise answers to common behavioral questions."
+    },
+    {
+      "user_text": "I feel like giving up on placement prep.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Please don’t be hard on yourself. Let’s break the journey into manageable steps—you’re not alone."
+    },
+    {
+      "user_text": "My friends don't take my stress seriously.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Your feelings are valid. Sometimes people don’t understand unless told clearly. Try expressing what you need."
+    },
+    {
+      "user_text": "I forget everything during interviews.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Use a structured approach—STAR for HR answers and step-by-step reasoning for coding questions."
+    },
+    {
+      "user_text": "My resume looks empty compared to others.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Focus on small but meaningful projects. Even 2–3 well explained projects can make a strong resume."
+    },
+    {
+      "user_text": "I'm failing DSA practice regularly.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Analyze mistakes topic-wise. Build a foundation with easy problems before moving to medium ones."
+    },
+    {
+      "user_text": "My parents expect too much from me.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Expectations can feel heavy. Try having an honest conversation about what feels realistic for you."
+    },
+    {
+      "user_text": "I feel pressure seeing others revise 10 hours a day.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Quality beats hours. 3–4 focused hours daily can be more effective than 10 distracted hours."
+    },
+    {
+      "user_text": "I got rejected again without feedback.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Rejections hurt, especially without context. Try mock interviews to identify blind spots."
+    },
+    {
+      "user_text": "I get nervous explaining time complexity.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Practice analyzing simple examples. Understanding patterns helps you explain confidently."
+    },
+    {
+      "user_text": "I’m scared my English is not good enough for interviews.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Practice small daily speaking exercises. Consistency matters more than fluency."
+    },
+    {
+      "user_text": "I’m constantly comparing myself to others.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Comparison steals joy. Focus on your progress—not someone else’s timeline."
+    },
+    {
+      "user_text": "My coding contest performance is inconsistent.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Analyze each contest and review mistakes. Consistency grows with stable practice routines."
+    },
+    {
+      "user_text": "I don't know how to start revising CS fundamentals.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Begin with OS, DBMS, and CN. Make short notes and revise weekly."
+    },
+    {
+      "user_text": "I feel worthless after every rejection.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Your worth isn't defined by rejection. You’re learning and improving every time."
+    },
+    {
+      "user_text": "I'm scared of solving medium-level problems.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Start with easy +1 problems. Slowly increase difficulty as confidence grows."
+    },
+    {
+      "user_text": "I mess up simple DSA problems sometimes.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "That’s normal. Repetition of basic patterns helps reduce such errors."
+    },
+    {
+      "user_text": "I have no idea what companies to target.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Start by separating product, service, and startup categories. Match them to your strengths."
+    },
+    {
+      "user_text": "I feel burned out after studying.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Take breaks before burnout worsens. Short walks or rest can recharge your mind."
+    },
+    {
+      "user_text": "I can’t focus because of family issues.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "You’re handling a lot. Try shorter study blocks and be kind to yourself."
+    },
+    {
+      "user_text": "I feel like my skills aren't improving.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Skill growth is invisible at first. Track what you solved each week to see progress."
+    },
+    {
+      "user_text": "I get frustrated debugging simple code.",
+      "emotion_label": "angry",
+      "risk_level": "low",
+      "sample_reply": "Try systematic debugging: print statements, edge-case checks, or breaking code into parts."
+    },
+    {
+      "user_text": "I’m struggling with dynamic programming.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Focus on patterns like knapsack, DP on strings, and DP on grids. Recognizing patterns helps a lot."
+    },
+    {
+      "user_text": "I'm scared companies will judge my gap year.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Explain how you used your gap year for learning. Companies value growth and honesty."
+    },
+    {
+      "user_text": "I cannot clear DSA rounds no matter how much I try.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Let’s analyze your approach: Are you structuring solutions? Practicing under time? Strengthening fundamentals? We can improve this step-by-step."
+    },
+    {
+      "user_text": "I feel lost with too many resources online.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "low",
+      "sample_reply": "Pick one DSA sheet and stick to it. Consistency matters more than variety."
+    },
+    {
+      "user_text": "I doubt myself before every contest.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "A short warm-up with 2 easy problems can build confidence before contests."
+    },
+    {
+      "user_text": "My mock interviews go well but real interviews don’t.",
+      "emotion_label": "confused",
+      "risk_level": "medium",
+      "sample_reply": "Real interviews add pressure. Try simulated interviews with strangers to mimic real conditions."
+    },
+    {
+      "user_text": "I’m scared someone will ask me deep project questions.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Prepare a solid explanation of architecture, challenges, and optimizations—you’ll feel more confident."
+    },
+    {
+      "user_text": "I feel like crying after results day.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Rejections are painful. Take a day to rest and reset. Your journey isn’t defined by one result."
+    },
+    {
+      "user_text": "I'm scared of CS fundamentals rounds.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Revisit basics with short notes and practice scenario-based questions."
+    },
+    {
+      "user_text": "I think I made the wrong career choice.",
+      "emotion_label": "confused",
+      "risk_level": "medium",
+      "sample_reply": "Career doubts are normal. Reflect on what you enjoy doing—not what others expect."
+    },
+    {
+      "user_text": "I get overwhelmed when I see too many coding problems.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "low",
+      "sample_reply": "Focus on topic-wise lists. Just 2–3 problems daily creates long-term mastery."
+    },
+    {
+      "user_text": "My preparation is too slow.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Slow but steady is powerful. What matters is consistency over weeks, not speed in one day."
+    },
+    {
+      "user_text": "I freeze when the interviewer asks follow-up questions.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Practice calm pauses. Think aloud so the interviewer understands your logic."
+    },
+    {
+      "user_text": "I can’t handle rejection anymore.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Rejection hurts deeply. You’re improving with every attempt. Take a break if needed—you don’t have to push nonstop."
+    },
+    {
+      "user_text": "I'm scared because my communication skills are weak.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Practice 10-minute daily speaking exercises. Improvement is gradual but very real."
+    },
+    {
+      "user_text": "My contest rank is dropping and I feel useless.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Contest rating drops happen. Focus on topic-wise weak areas and practice consistently."
+    },
+    {
+      "user_text": "I can’t understand advanced DSA topics.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Break them into simpler subtopics. Learn with visual explanations first."
+    },
+    {
+      "user_text": "I’m afraid I won’t earn enough in future.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Future uncertainty is heavy. Build skills steadily—opportunities grow with time."
+    },
+    {
+      "user_text": "I feel overwhelmed by expectations at home.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Expectations can feel suffocating. Try explaining your workload honestly to ease pressure."
+    },
+    {
+      "user_text": "I failed both online assessments this week.",
+      "emotion_label": "disappointed",
+      "risk_level": "medium",
+      "sample_reply": "Analyze where you lost marks—speed, accuracy, or concept gaps. Improvement begins with clarity."
+    },
+    {
+      "user_text": "I get irritated when I can't solve medium problems.",
+      "emotion_label": "angry",
+      "risk_level": "low",
+      "sample_reply": "Try breaking the problem into simpler steps. Slowly increasing difficulty reduces irritation."
+    },
+    {
+      "user_text": "I’m scared interviewers will think I’m dumb.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Interviews evaluate thinking, not perfection. Walk through your reasoning clearly."
+    },
+    {
+      "user_text": "I can’t manage project + DSA together.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Split days: alternate between project and DSA. It keeps workload balanced."
+    },
+    {
+      "user_text": "I feel like no matter what I do, I’m not improving.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Improvement is subtle. Track progress weekly—you may notice more growth than you think."
+    },
+    {
+      "user_text": "My mock interview feedback was terrible.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Feedback is a tool for growth. Pick one area at a time—communication, clarity, or technical depth."
+    },
+    {
+      "user_text": "I feel anxious about group discussions.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Practice short 1-minute summaries of topics. It builds confidence."
+    },
+    {
+      "user_text": "I can't keep up with college + placements.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Create a light weekly plan. 1 hour per day is enough if consistent."
+    },
+    {
+      "user_text": "I get discouraged when I see others solving hard problems.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Everyone grows at their own pace. Focus on *your* improvement curve."
+    },
+    {
+      "user_text": "I’m scared because I don’t have certifications.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Certifications help but aren’t mandatory. Strong projects matter more."
+    },
+    {
+      "user_text": "My brain stops working during interviews.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Practice deep breathing before the interview. Stay calm and talk through your thought process."
+    },
+    {
+      "user_text": "I feel like nothing I do is enough.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Perfection is not required. Celebrate small achievements—they count."
+    },
+    {
+      "user_text": "I’m stuck in a loop of procrastination.",
+      "emotion_label": "distracted",
+      "risk_level": "low",
+      "sample_reply": "Try starting with a 5-minute task. Momentum builds from small beginnings."
+    },
+    {
+      "user_text": "I’m scared because placement season is near.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Fear means you care. Build a simple structured plan—DSA, projects, mock interviews."
+    },
+    {
+      "user_text": "I hate that my contest rating never improves.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Try solving editorials after contests—it boosts understanding and future performance."
+    },
+    {
+      "user_text": "I keep mixing up DP states.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Draw a table or visualize transitions. Patterns become clearer with diagrams."
+    },
+    {
+      "user_text": "I feel sad seeing my friends succeed.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Your feelings are valid. Everyone has a different pace—your time will come too."
+    },
+    {
+      "user_text": "I have too many topics left to revise.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Prioritize high-yield topics. You don’t need to cover everything to perform well."
+    },
+    {
+      "user_text": "I'm scared because I fail every system design round.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Start with small systems like URL shortener or chat app. Build gradually."
+    },
+    {
+      "user_text": "I think interviewers judge me for being slow.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "They value clarity more than speed. Explain your logic step-by-step."
+    },
+    {
+      "user_text": "I get anxiety while explaining solutions.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Practice explaining to a friend or record yourself—this builds confidence."
+    },
+    {
+      "user_text": "My logical thinking is weak.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Try puzzle and pattern questions. Over time, your reasoning sharpens."
+    },
+    {
+      "user_text": "I keep comparing my resume with others.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Focus on strengthening your own projects. Comparison isn’t productive."
+    },
+    {
+      "user_text": "I feel like I’ll disappoint my family.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Your journey is your own. Share your struggles with them—they may be more supportive than you think."
+    },
+    {
+      "user_text": "I panic during coding rounds.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Do mock timed contests to simulate pressure and build resilience."
+    },
+    {
+      "user_text": "I'm scared because my DSA progress is slow.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Slow progress is still progress. Consistency matters most."
+    },
+    {
+      "user_text": "I have zero confidence in my speaking skills.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "Try mirror practice—2 minutes a day. Small but effective."
+    },
+    {
+      "user_text": "My mock test accuracy is horrible.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Review mistakes topic-wise. Accuracy builds with targeted practice."
+    },
+    {
+      "user_text": "I keep running out of time in contests.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Skip stuck problems quickly. Time management improves with strategy."
+    },
+    {
+      "user_text": "I'm scared because I don’t have internships.",
+      "emotion_label": "worried",
+      "risk_level": "low",
+      "sample_reply": "Strong projects and good interview prep can compensate for missing internships."
+    },
+    {
+      "user_text": "I'm tired of failing repeatedly.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Repeated failure is exhausting. But each attempt builds improvement. Take rest if needed."
+    },
+    {
+      "user_text": "I can’t structure my answers.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Use frameworks like STAR for HR and step-by-step for technical explanations."
+    },
+    {
+      "user_text": "I feel anxious before campus drives.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Prepare a checklist—resume, projects, DSA topics. It builds confidence."
+    },
+    {
+      "user_text": "I panic when interviewer asks follow-up questions.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Take 2 seconds before answering. Thinking time is normal."
+    },
+    {
+      "user_text": "I feel I'm not meant for coding.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Everyone struggles. With structured practice, coding becomes easier."
+    },
+    {
+      "user_text": "I can’t do well in aptitude tests.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Practice topic-wise with time limits. Aptitude improves much faster than DSA."
+    },
+    {
+      "user_text": "My contest graph keeps falling.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Contest graphs fluctuate. Analyze weak topics and revise fundamentals."
+    },
+    {
+      "user_text": "I'm scared of online assessments.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Start with easy practice tests to build confidence before attempting harder ones."
+    },
+    {
+      "user_text": "I feel useless after coding rounds.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Your feelings are valid. But coding skill grows with time—don’t give up."
+    },
+    {
+      "user_text": "I'm lost between web dev and ML.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Try mini-projects in both and see which excites you more."
+    },
+    {
+      "user_text": "I keep forgetting syntax.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Practice writing code instead of relying on auto-complete."
+    },
+    {
+      "user_text": "I can’t stay consistent.",
+      "emotion_label": "distracted",
+      "risk_level": "low",
+      "sample_reply": "Start with 20-minute daily routines. Build momentum slowly."
+    },
+    {
+      "user_text": "My DSA sheet progress is very slow.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Even one problem a day compounds into strong results."
+    },
+    {
+      "user_text": "I couldn't solve even easy problems today.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Bad days happen. Reset and start fresh with one simple question."
+    },
+    {
+      "user_text": "I'm scared because I'm always stuck at logic building.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Break problems into inputs, outputs, and steps. Small decomposition helps a lot."
+    },
+    {
+      "user_text": "I can't handle MCQ pressure.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Practice small timed MCQ quizzes daily."
+    },
+    {
+      "user_text": "I'm scared because everyone around me is preparing better.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Your journey is unique. Focus on your own progress."
+    },
+    {
+      "user_text": "I'm unable to revise OS properly.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Start with process scheduling, deadlocks, and memory management. Build from core topics."
+    },
+    {
+      "user_text": "I forget DBMS concepts often.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Use small notes and revise weekly to reinforce memory."
+    },
+    {
+      "user_text": "I'm scared for coding round tomorrow.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Calm your mind. Revise patterns, not entire topics."
+    },
+    {
+      "user_text": "I hate that I freeze during interviews.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Practice mock interviews to reduce fear and gain confidence."
+    },
+    {
+      "user_text": "I'm scared of project grilling.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Prepare 3 key challenges you faced—this boosts confidence."
+    },
+    {
+      "user_text": "My soft skills are terrible.",
+      "emotion_label": "insecure",
+      "risk_level": "low",
+      "sample_reply": "You can improve with practice—try speaking in small groups or recording short clips."
+    },
+    {
+      "user_text": "I feel demotivated seeing LinkedIn posts.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Social media shows highlights, not struggles. Focus on your own growth."
+    },
+    {
+      "user_text": "I can’t solve DP on trees.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Start with generic DFS patterns. Tree DP becomes easier once traversal logic is strong."
+    },
+    {
+      "user_text": "I'm confused between learning DSA and development.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Do both in balance—DSA 60 minutes + development 60 minutes daily."
+    },
+    {
+      "user_text": "My placement results ruined my week.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "It’s okay to feel upset. Take a day to rest and start fresh."
+    },
+    {
+      "user_text": "I think I'll fail all upcoming interviews.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Fear grows from uncertainty. Prepare structured answers to gain confidence."
+    },
+    {
+      "user_text": "I'm scared to even start the DSA sheet again.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Start with easy problems. Build momentum slowly."
+    },
+    {
+      "user_text": "I get too scared to talk in HR rounds.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Practice common HR questions beforehand to build confidence."
+    },
+    {
+      "user_text": "I messed up my coding round again.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Review what went wrong—logic, time management, or syntax. Improvement begins with awareness."
+    },
+    {
+      "user_text": "I feel like running away from responsibilities.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "You're under pressure. Take breaks and handle tasks one at a time."
+    },
+    {
+      "user_text": "I’m scared of system design even for entry level.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Start with basic components like load balancers and caches. Build up step-by-step."
+    },
+    {
+      "user_text": "My mind goes blank during interviews.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Pause, breathe, and restart. Interviewers understand nerves."
+    },
+    {
+      "user_text": "I'm failing interviews regularly.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Let's reflect: Are you unable to explain projects, struggling with soft skills, or facing DSA issues? Listing weak points helps target improvement."
+    },
+    {
+      "user_text": "I don’t understand graphs well.",
+      "emotion_label": "frustrated",
+      "risk_level": "low",
+      "sample_reply": "Learn BFS/DFS thoroughly—most graph problems build from them."
+    },
+    {
+      "user_text": "I feel unproductive all the time.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Try planning 3 simple tasks daily. Small wins matter."
+    },
+    {
+      "user_text": "I can’t maintain discipline.",
+      "emotion_label": "distracted",
+      "risk_level": "low",
+      "sample_reply": "Create a simple routine and stick with it for a week."
+    },
+    {
+      "user_text": "My DSA concepts vanish when pressure comes.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Practice under timed environments to build resilience."
+    },
+    {
+      "user_text": "I'm exhausted from everything.",
+      "emotion_label": "overwhelmed",
+      "risk_level": "medium",
+      "sample_reply": "Take a short break. Rest is essential to avoid burnout."
+    },
+    {
+      "user_text": "I hate that I always overthink.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Try journaling for 5 minutes daily—it helps empty the mental load."
+    },
+    {
+      "user_text": "I'm scared to attempt medium problems.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Start with variations of easy problems. Difficulty should rise gradually."
+    },
+    {
+      "user_text": "I feel like my talent is useless.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Your abilities matter. Progress takes time—please don’t undervalue yourself."
+    },
+    {
+      "user_text": "I wasted my last semester.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "It’s okay. Start now with a clear structured plan."
+    },
+    {
+      "user_text": "I'm scared of technical interviews.",
+      "emotion_label": "anxious",
+      "risk_level": "medium",
+      "sample_reply": "Start with mock sessions to familiarize yourself with pressure."
+    },
+    {
+      "user_text": "I get anxious seeing leaderboards.",
+      "emotion_label": "anxious",
+      "risk_level": "low",
+      "sample_reply": "Track personal improvement instead of comparing scores."
+    },
+    {
+      "user_text": "My confidence drops after every contest.",
+      "emotion_label": "sad",
+      "risk_level": "low",
+      "sample_reply": "Review mistakes constructively—growth comes through analysis."
+    },
+    {
+      "user_text": "I feel confused choosing a specialization.",
+      "emotion_label": "confused",
+      "risk_level": "low",
+      "sample_reply": "Try small trial projects—it clarifies interest naturally."
+    },
+    {
+      "user_text": "I fail almost every coding test.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Identify weak areas (speed, accuracy, logic) and practice focused topics."
+    },
+    {
+      "user_text": "I fear that I'm not good enough for tech.",
+      "emotion_label": "sad",
+      "risk_level": "medium",
+      "sample_reply": "Everyone starts somewhere. Consistent effort shapes skill."
+    }
+  ]
+}
