@@ -1,4 +1,3 @@
-# Serve.py
 import pickle
 from Student import StudentEnv
 from QLearningAgent import QLearningAgent, ACTIONS
