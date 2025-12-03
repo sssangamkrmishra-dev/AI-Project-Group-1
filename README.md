@@ -10,11 +10,11 @@
 
 ## Project Modules: <br>
 
-1. Bayesian Estimation of Student Placement Readiness and Risk <br>
-2. Search-Based Recommendation <br>
-3. Planning Placement Strategy using GraphPlan and POP <br>
-4. Reinforcement Learning for Adaptive Interview Coaching <br>
-5. LLM-Based Custom Career Guidance and Safe Motivation Response<br>
+1. Bayesian Estimation of Student Placement Readiness and Risk (Sangam Kumar Mishra) <br>
+2. Search-Based Recommendation (Devanshu Dangi) <br>
+3. Planning Placement Strategy using GraphPlan and POP (Rustam Kumar, Sarsava Het Pravinbhai) <br>
+4. Reinforcement Learning for Adaptive Interview Coaching (Debargha Nath) <br>
+5. LLM-Based Custom Career Guidance and Safe Motivation Response (Utkarsh Singh) <br>
 
 <br>
 All Modules have their individual README files as well
